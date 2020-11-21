@@ -20,7 +20,7 @@ export class LoginGuard implements CanActivate {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
       return new Promise(resolve => {
-        if (localStorage.getItem("adimToken")) {
+        if (localStorage.getItem("adminToken")) {
           console.log("##### User Guard: auth = true");
           resolve(true);
         } else {
