@@ -1,0 +1,12 @@
+.sidebar{
+    height:  100%;
+    width: 220px;
+    background-color: #2c2e30;
+}
+
+.items{
+    padding: 8px;
+    border-bottom: 1px solid #d2d4d7;
+    color: #d2d4d7;
+    cursor: pointer;
+}
