@@ -1,25 +1,43 @@
 const express = require('express')
 const api = express()
 const token = require("../global/token");
-const upload = require('./multer.js');
+const url = require("../global/url");
+const upload = require('../multers/slider-multer.js');
 const fs = require('fs');
 const path = require('path');
 const connetctSQL = require('../global/mysql')
 
 api.use(express.json());
-console.log(__dirname + '../images/')
-
-
-
 
 api.post('/slider-img', upload.single('file'), function (req, res) {
-    let img = fs.readFileSync(req.file.path);
-    var encode_image = img.toString('base64');
-    console.log(new Buffer.alloc(11,encode_image, 'base64'),'path')
-    if(JSON.parse(req.body.token) == token)
-        res.status(200).send(true);
+    let img_url = `${url}${req.body.fileName}`
+    if (JSON.parse(req.body.token) == token) {
+        connetctSQL.query("INSERT INTO `slider`(`title_am`, `title_en`, `title_ru`, `title_fr`, `img_url`, `img_name`, `service_id`) VALUES ('" + req.body.title_am + "','" + req.body.title_en + "','" + req.body.title_ru + "','" + req.body.title_fr + "','" + img_url + "','" + req.body.fileName + "','" + req.body.service_id + "')", function (err, result, fields) {
+            if (err) throw err;
+            res.status(201).json({ result });
+        });
+    }
     else
-        res.status(200).send(req.body);
+        res.status(200).send(false);
+})
+
+api.get('/slider-data', function (req, res) {
+        connetctSQL.query("SELECT * FROM `slider` WHERE 1", function (err, result, fields) {
+            if (err) throw err;
+            res.status(201).json({ result });
+        });
+})
+
+api.delete('/slider-data/:id/:token/:fileName', function (req, res) {
+    if (JSON.parse(req.params.token) == token) {
+        connetctSQL.query("DELETE FROM `slider` WHERE id='"+ req.params.id +"'", function (err, result, fields) {
+            if (err) throw err;
+            fs.unlinkSync(`${__dirname}/../images/slider/${req.params.fileName}`)
+            res.status(201).json({ result });
+        });
+    }
+    else
+        res.status(200).send(false);
 })
 
 api.get('/dirname', function (req, res, next) {

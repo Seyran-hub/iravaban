@@ -20,6 +20,7 @@
     "@angular/platform-browser-dynamic": "~10.2.0",
     "@angular/router": "~10.2.0",
     "angular-reactive-form": "^1.0.0",
+    "react-reactive-form": "^1.0.32",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"

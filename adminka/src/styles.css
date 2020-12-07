@@ -36,11 +36,15 @@ body{
 .send_butt{
     padding: 0 16px;
     height: 32px;
-    background-color: #2c2e30;
+    background-color: #38393a;
     border-radius: 6px;
     color: #fff;
     border: none;
     cursor: pointer;
+}
+
+.send_butt:disabled{
+    background-color: #9fa5ac;
 }
 
 .send_butt:focus{

@@ -3,7 +3,7 @@
     <app-sidebar></app-sidebar>
     <div class="pages_blog">
         <h1>Home Page</h1>
-        <div class="add_slider">
+        <form class="add_slider"  [formGroup]="sliderForm" novalidate>
             <h2>Add Slider</h2>
             <div>
                 <input type="file"
@@ -11,52 +11,45 @@
                 (change)="handleFileInput($event.target.files)"/>
             </div>
             <div class="inp_block">
-                <div class="input_style"><input type="text" placeholder="Slider Title EN"></div>
-                <div class="input_style"><input type="text" placeholder="Slider Title AM"></div>
+                <div class="input_style"><input type="text"  formControlName="title_am" placeholder="Slider Title AM"></div>
+                <div class="input_style"><input type="text"  formControlName="title_en" placeholder="Slider Title EN"></div>
             </div>
             <div class="inp_block">
-                <div class="input_style"><input type="text" placeholder="Slider Title RU"></div>
-                <div class="input_style"><input type="text" placeholder="Slider Title FR"></div>
+                <div class="input_style"><input type="text"  formControlName="title_ru" placeholder="Slider Title RU"></div>
+                <div class="input_style"><input type="text"  formControlName="title_fr" placeholder="Slider Title FR"></div>
             </div>
             <div class="select_service">
                 <label for="service">Choose a Service:</label>
-                <select name="service" id="service">
-                  <option value="volvo">Volvo</option>
-                  <option value="saab">Saab</option>
-                  <option value="opel">Opel</option>
-                  <option value="audi">Audi</option>
+                <select name="service" id="service"  formControlName="service_id">
+                  <option value="1">service_1</option>
+                  <option value="2">service_2</option>
+                  <option value="3">service_3</option>
+                  <option value="4">service_4</option>
                 </select>
             </div>
-            <button class="send_butt">SEND</button>
-        </div>
-        <div class="slider_list">
+            <button class="send_butt"  [disabled]="!sliderForm.valid" (click)="sendData()">SEND</button>
+        </form>
+        <div class="slider_list" *ngIf="sliderData && sliderData.length">
             <h2>Slider List</h2>
             <table>
                 <tr>
-                  <th>Slider Title EN</th>
-                  <th>Slider Title AM</th>
+                    <th>Slider Title AM</th>
+                    <th>Slider Title EN</th>
                   <th>Slider Title RU</th>
                   <th>Slider Title FR</th>
                   <th></th>
                 </tr>
-                <tr>
-                  <td>Alfreds Futterkiste</td>
-                  <td>Maria Anders</td>
-                  <td>Germany</td>
-                  <td>Germany</td>
+                <tr *ngFor="let e of sliderData">
+                  <td>{{e.title_am}}</td>
+                  <td>{{e.title_en}}</td>
+                  <td>{{e.title_ru}}</td>
+                  <td>{{e.title_fr}}</td>
                   <td>
                       <div class="icon_block">
                           <span class="icons_rem"><img src="../../../assets/icons/pencil.svg" alt="" width="18px"></span>
-                          <span class="icons_rem"><img src="../../../assets/icons/delete.svg" alt="" width="18px"></span>
+                          <span class="icons_rem" (click)="delete(e)"><img src="../../../assets/icons/delete.svg" alt="" width="18px"></span>
                       </div>
                     </td>
-                </tr>
-                <tr>
-                  <td>Centro comercial Moctezuma</td>
-                  <td>Francisco Chang</td>
-                  <td>Mexico</td>
-                  <td>Mexico</td>
-                  <td>Mexico</td>
                 </tr>
               </table>
         </div>

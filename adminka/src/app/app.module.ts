@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule,CUSTOM_ELEMENTS_SCHEMA   } from '@angular/core';
-
+import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -21,10 +21,11 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   providers: [],

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GlobalService } from 'src/app/shared/service/global/global.service';
 import { HomeService } from 'src/app/shared/service/home/home.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-home-page',
@@ -9,32 +10,69 @@ import { HomeService } from 'src/app/shared/service/home/home.service';
 })
 export class HomePageComponent implements OnInit {
   fileToUpload: File = null;
+  sliderForm
+  sliderData
+  
   constructor(
-    private homeService: HomeService,
+    private homeService: HomeService,    
+    public formBuilder: FormBuilder,
     private globalService: GlobalService
-  ) { }
+  ) {
+    this.homeService.getSlider().subscribe(e => {
+      this.sliderData = e['result']
+      console.log(e)
+    })
+    this.sliderForm = formBuilder.group({
+      title_am: ["", Validators.required],
+      title_en: ["", Validators.required],
+      title_ru: ["", Validators.required],
+      title_fr: ["", Validators.required],
+      service_id: [3, Validators.required],
+      file: ["", Validators.required]
+    });
+   }
 
   ngOnInit(): void {
   }
 
   handleFileInput(files: FileList) {
     this.fileToUpload = files.item(0);
-    console.log(this.fileToUpload)
-    this.postFile(this.fileToUpload)
+    this.sliderForm.get('file').setValue('name')
   }
 
-  uploadFileToActivity() {
-
-  }
-
-  postFile(fileToUpload) {
-    const endpoint = 'your-destination-url';
+  sendData() {
     const formData = new FormData();
-    formData.append('file', fileToUpload, fileToUpload.name);
-    formData.append('fileName', fileToUpload.name);
+    formData.append('file', this.fileToUpload, this.fileToUpload.name);
+    formData.append('fileName', this.fileToUpload.name);
     formData.append('token',  this.globalService.token);
+    formData.append('title_am',  this.sliderForm.value.title_am);
+    formData.append('title_en',  this.sliderForm.value.title_en);
+    formData.append('title_ru',  this.sliderForm.value.title_ru);
+    formData.append('title_fr',  this.sliderForm.value.title_fr);
+    formData.append('service_id',  this.sliderForm.value.service_id);
     this.homeService.setSlider(formData).subscribe(e => {
-      console.log(e)
+      this.sliderForm.get('title_am').setValue('')
+      this.sliderForm.get('title_en').setValue('')
+      this.sliderForm.get('title_ru').setValue('')
+      this.sliderForm.get('title_fr').setValue('')
+      this.sliderForm.get('service_id').setValue(1)
+      this.homeService.getSlider().subscribe(el => {
+        this.sliderData = el['result']
+        console.log(el)
+      })
+    })
+  }
+
+  delete(el){
+    let data ={
+      id: el.id,
+      fileName: el.img_name,
+      token: this.globalService.token
+    }
+    this.homeService.deleteSlider(data).subscribe(e => {
+      this.homeService.getSlider().subscribe(el => {
+        this.sliderData = el['result']
+      })
     })
   }
 }
