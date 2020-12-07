@@ -12,7 +12,9 @@ export class HomePageComponent implements OnInit {
   fileToUpload: File = null;
   sliderForm
   sliderData
-  
+  modal = false
+  updateForm
+
   constructor(
     private homeService: HomeService,    
     public formBuilder: FormBuilder,
@@ -20,8 +22,17 @@ export class HomePageComponent implements OnInit {
   ) {
     this.homeService.getSlider().subscribe(e => {
       this.sliderData = e['result']
-      console.log(e)
     })
+
+    this.updateForm = formBuilder.group({
+      title_am: ["", Validators.required],
+      title_en: ["", Validators.required],
+      title_ru: ["", Validators.required],
+      title_fr: ["", Validators.required],
+      service_id: ["", Validators.required],
+      id: ["", Validators.required],
+    });
+
     this.sliderForm = formBuilder.group({
       title_am: ["", Validators.required],
       title_en: ["", Validators.required],
@@ -73,6 +84,28 @@ export class HomePageComponent implements OnInit {
       this.homeService.getSlider().subscribe(el => {
         this.sliderData = el['result']
       })
+    })
+  }
+
+  editModal(data){
+    this.updateForm.get('title_am').setValue(data.title_am)
+    this.updateForm.get('title_en').setValue(data.title_en)
+    this.updateForm.get('title_ru').setValue(data.title_ru)
+    this.updateForm.get('title_fr').setValue(data.title_fr)
+    this.updateForm.get('service_id').setValue(data.service_id)
+    this.updateForm.get('id').setValue(data.id)
+    this.modal = !this.modal
+  }
+
+
+  updateData(){
+    let data = Object.assign(this.updateForm.value, {token: this.globalService.token})
+    this.homeService.updateSlider(data).subscribe(e => {
+      this.homeService.getSlider().subscribe(el => {
+        this.sliderData = el['result']
+        this.modal = !this.modal
+      })
+      console.log(e)
     })
   }
 }

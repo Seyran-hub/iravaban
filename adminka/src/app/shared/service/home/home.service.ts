@@ -14,7 +14,7 @@ export class HomeService {
   ) { }
 
   setSlider(data: any){
-    return  this.http.post(`${this.globalService.url}/slider-img`,data)
+    return  this.http.post(`${this.globalService.url}/slider-data`,data)
   }
 
   getSlider(){
@@ -23,5 +23,9 @@ export class HomeService {
 
   deleteSlider(data: any){
     return  this.http.delete(`${this.globalService.url}/slider-data/${data.id}/${data.token}/${data.fileName}`)
+  }
+
+  updateSlider(data: any){
+    return  this.http.put(`${this.globalService.url}/slider-data`, data)
   }
 }

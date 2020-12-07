@@ -1,3 +1,32 @@
+<div class="modal" *ngIf="modal">
+    <div class="modal_block">
+        <div class="close" (click)="modal = !modal">
+            <img src="/assets/icons/cancel.png" alt="" width="20px">
+        </div>
+        <form class="add_slider"  [formGroup]="updateForm" novalidate>
+            <h2>Update Slider</h2>
+            <div class="inp_block">
+                <div class="input_style"><input type="text"  formControlName="title_am" placeholder="Slider Title AM"></div>
+                <div class="input_style"><input type="text"  formControlName="title_en" placeholder="Slider Title EN"></div>
+            </div>
+            <div class="inp_block">
+                <div class="input_style"><input type="text"  formControlName="title_ru" placeholder="Slider Title RU"></div>
+                <div class="input_style"><input type="text"  formControlName="title_fr" placeholder="Slider Title FR"></div>
+            </div>
+            
+            <div class="select_service">
+                <label for="service">Choose a Service:</label>
+                <select name="service" id="service"  formControlName="service_id">
+                  <option value="1">service_1</option>
+                  <option value="2">service_2</option>
+                  <option value="3">service_3</option>
+                  <option value="4">service_4</option>
+                </select>
+            </div>
+            <button class="send_butt"  [disabled]="!updateForm.valid" (click)="updateData()">SEND</button>
+        </form>
+    </div>
+</div>
 <app-header></app-header>
 <div class="container_fm">
     <app-sidebar></app-sidebar>
@@ -46,8 +75,8 @@
                   <td>{{e.title_fr}}</td>
                   <td>
                       <div class="icon_block">
-                          <span class="icons_rem"><img src="../../../assets/icons/pencil.svg" alt="" width="18px"></span>
-                          <span class="icons_rem" (click)="delete(e)"><img src="../../../assets/icons/delete.svg" alt="" width="18px"></span>
+                          <span class="icons_rem"><img src="/assets/icons/pencil.svg" alt="" width="18px" (click)="editModal(e)"></span>
+                          <span class="icons_rem" (click)="delete(e)"><img src="/assets/icons/delete.svg" alt="" width="18px"></span>
                       </div>
                     </td>
                 </tr>

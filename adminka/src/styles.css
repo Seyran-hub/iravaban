@@ -88,3 +88,28 @@ table {
       font-size: 18px;
       margin-right: 10px;
 }
+
+.modal{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(21,21,21, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal_block{
+    padding: 10px 20px;
+    background-color: #fff;
+    position: relative;
+}
+
+.modal_block .close{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+}
