@@ -17,10 +17,8 @@
             <div class="select_service">
                 <label for="service">Choose a Service:</label>
                 <select name="service" id="service"  formControlName="service_id">
-                  <option value="1">service_1</option>
-                  <option value="2">service_2</option>
-                  <option value="3">service_3</option>
-                  <option value="4">service_4</option>
+                    <option [value]="-1">Service none chuse</option>
+                    <option [value]="e.id" *ngFor="let e of serviceData">{{e.id}}</option>
                 </select>
             </div>
             <button class="send_butt"  [disabled]="!updateForm.valid" (click)="updateData()">SEND</button>
@@ -50,17 +48,15 @@
             <div class="select_service">
                 <label for="service">Choose a Service:</label>
                 <select name="service" id="service"  formControlName="service_id">
-                  <option value="1">service_1</option>
-                  <option value="2">service_2</option>
-                  <option value="3">service_3</option>
-                  <option value="4">service_4</option>
+                  <option [value]="-1">Service none chuse</option>
+                  <option [value]="e.id" *ngFor="let e of serviceData">{{e.title_en}}</option>
                 </select>
             </div>
             <button class="send_butt"  [disabled]="!sliderForm.valid" (click)="sendData()">SEND</button>
         </form>
         <div class="slider_list" *ngIf="sliderData && sliderData.length">
-            <h2>Slider List</h2>
-            <table>
+            <h2 (click)="listCheck = !listCheck">Slider List</h2>
+            <table *ngIf="listCheck">
                 <tr>
                     <th>Slider Title AM</th>
                     <th>Slider Title EN</th>

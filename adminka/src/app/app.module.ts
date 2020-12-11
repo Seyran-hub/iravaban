@@ -9,7 +9,9 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
-
+import { ServiceComponent } from './pages/service/service.component';
+import { AngularEditorModule } from '@kolkov/angular-editor';
+import { ContentPipe } from './shared/pipe/content.pipe';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     HeaderComponent,
     SidebarComponent,
     HomePageComponent,
+    ServiceComponent,
+    ContentPipe,
   ],
   imports: [
     BrowserModule,
@@ -26,6 +30,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    AngularEditorModule
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   providers: [],

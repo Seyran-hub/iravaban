@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { GlobalService } from 'src/app/shared/service/global/global.service';
 import { HomeService } from 'src/app/shared/service/home/home.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ServiceService } from 'src/app/shared/service/service/service.service';
 
 @Component({
   selector: 'app-home-page',
@@ -14,13 +15,17 @@ export class HomePageComponent implements OnInit {
   sliderData
   modal = false
   updateForm
-
+  listCheck = false
+  serviceData = []
   constructor(
     private homeService: HomeService,    
     public formBuilder: FormBuilder,
-    private globalService: GlobalService
+    private globalService: GlobalService,
+    private serviceService: ServiceService
   ) {
+    this.serviceService.getService().subscribe(e => this.serviceData = e['result'])
     this.homeService.getSlider().subscribe(e => {
+      console.log(e)
       this.sliderData = e['result']
     })
 
@@ -38,7 +43,7 @@ export class HomePageComponent implements OnInit {
       title_en: ["", Validators.required],
       title_ru: ["", Validators.required],
       title_fr: ["", Validators.required],
-      service_id: [3, Validators.required],
+      service_id: [-1, Validators.required],
       file: ["", Validators.required]
     });
    }
@@ -69,7 +74,6 @@ export class HomePageComponent implements OnInit {
       this.sliderForm.get('service_id').setValue(1)
       this.homeService.getSlider().subscribe(el => {
         this.sliderData = el['result']
-        console.log(el)
       })
     })
   }
@@ -105,7 +109,6 @@ export class HomePageComponent implements OnInit {
         this.sliderData = el['result']
         this.modal = !this.modal
       })
-      console.log(e)
     })
   }
 }

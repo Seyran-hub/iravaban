@@ -2,6 +2,7 @@
 body{
     padding: 0;
     margin: 0;
+    position: relative;
 }
 
 .container_fm{
@@ -99,6 +100,7 @@ table {
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 10
 }
 
 .modal_block{

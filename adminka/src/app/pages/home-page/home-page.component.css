@@ -5,3 +5,7 @@
     height: 32px;
     border-radius: 6px;
 }
+
+h2{
+    cursor: pointer;
+}
