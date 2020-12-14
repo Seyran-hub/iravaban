@@ -10,21 +10,22 @@ const connetctSQL = require('../global/mysql')
 api.use(express.json());
 
 api.post('/slider-data', upload.single('file'), function (req, res) {
-    let img_url = `${url}${req.body.fileName}`
+    let img_url = `${url}/slider/${req.file.filename}`
     if (JSON.parse(req.body.token) == token) {
-        connetctSQL.query("INSERT INTO `slider`(`title_am`, `title_en`, `title_ru`, `title_fr`, `img_url`, `img_name`, `service_id`) VALUES ('" + req.body.title_am + "','" + req.body.title_en + "','" + req.body.title_ru + "','" + req.body.title_fr + "','" + img_url + "','" + req.body.fileName + "','" + req.body.service_id + "')", function (err, result, fields) {
+        connetctSQL.query("INSERT INTO `slider`(`title_am`, `title_en`, `title_ru`, `title_fr`, `img_url`, `img_name`, `service_id`) VALUES ('" + req.body.title_am + "','" + req.body.title_en + "','" + req.body.title_ru + "','" + req.body.title_fr + "','" + img_url + "','" + req.file.filename + "','" + req.body.service_id + "')", function (err, result, fields) {
             if (err) throw err;
             res.status(201).json({ result });
         });
     }
     else
-        res.status(200).send(false);
+        res.status(500).send(false);
 })
+
 
 api.put('/slider-data', function (req, res) {
     if (JSON.parse(req.body.token) == token) {
         console.log(req.body.service_id)
-        connetctSQL.query("UPDATE `slider` SET `title_am`='" + req.body.title_am + "', `title_en`='" + req.body.title_en + "', `title_ru`='" + req.body.title_ru + "', `title_fr`='" + req.body.title_fr + "', `service_id`='" + req.body.service_id + "' WHERE id='"+ req.body.id +"'", function (err, result, fields) {
+        connetctSQL.query("UPDATE `slider` SET `title_am`='" + req.body.title_am + "', `title_en`='" + req.body.title_en + "', `title_ru`='" + req.body.title_ru + "', `title_fr`='" + req.body.title_fr + "', `service_id`='" + req.body.service_id + "' WHERE id='" + req.body.id + "'", function (err, result, fields) {
             if (err) throw err;
             res.status(201).json({ result });
         });
@@ -34,15 +35,15 @@ api.put('/slider-data', function (req, res) {
 })
 
 api.get('/slider-data', function (req, res) {
-        connetctSQL.query("SELECT * FROM `slider` WHERE 1", function (err, result, fields) {
-            if (err) throw err;
-            res.status(201).json({ result });
-        });
+    connetctSQL.query("SELECT * FROM `slider` WHERE 1", function (err, result, fields) {
+        if (err) throw err;
+        res.status(201).json({ result });
+    });
 })
 
 api.delete('/slider-data/:id/:token/:fileName', function (req, res) {
     if (JSON.parse(req.params.token) == token) {
-        connetctSQL.query("DELETE FROM `slider` WHERE id='"+ req.params.id +"'", function (err, result, fields) {
+        connetctSQL.query("DELETE FROM `slider` WHERE id='" + req.params.id + "'", function (err, result, fields) {
             if (err) throw err;
             fs.unlinkSync(`${__dirname}/../images/slider/${req.params.fileName}`)
             res.status(201).json({ result });

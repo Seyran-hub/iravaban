@@ -1,1 +1,1 @@
-module.exports = url = 'http://localhost:3000/images/slider/'
+module.exports = url = 'http://localhost:3000/images'

@@ -6,12 +6,12 @@
         <form class="add_slider"  [formGroup]="updateForm" novalidate>
             <h2>Update Slider</h2>
             <div class="inp_block">
-                <div class="input_style"><input type="text"  formControlName="title_am" placeholder="Slider Title AM"></div>
-                <div class="input_style"><input type="text"  formControlName="title_en" placeholder="Slider Title EN"></div>
+                <div class="input_style"><input type="text"  formControlName="title_am" placeholder="Slider Title AM*"></div>
+                <div class="input_style"><input type="text"  formControlName="title_en" placeholder="Slider Title EN*"></div>
             </div>
             <div class="inp_block">
-                <div class="input_style"><input type="text"  formControlName="title_ru" placeholder="Slider Title RU"></div>
-                <div class="input_style"><input type="text"  formControlName="title_fr" placeholder="Slider Title FR"></div>
+                <div class="input_style"><input type="text"  formControlName="title_ru" placeholder="Slider Title RU*"></div>
+                <div class="input_style"><input type="text"  formControlName="title_fr" placeholder="Slider Title FR*"></div>
             </div>
             
             <div class="select_service">
@@ -38,21 +38,22 @@
                 (change)="handleFileInput($event.target.files)"/>
             </div>
             <div class="inp_block">
-                <div class="input_style"><input type="text"  formControlName="title_am" placeholder="Slider Title AM"></div>
-                <div class="input_style"><input type="text"  formControlName="title_en" placeholder="Slider Title EN"></div>
+                <div class="input_style"><input type="text"  formControlName="title_am" placeholder="Slider Title AM*"></div>
+                <div class="input_style"><input type="text"  formControlName="title_en" placeholder="Slider Title EN*"></div>
             </div>
             <div class="inp_block">
-                <div class="input_style"><input type="text"  formControlName="title_ru" placeholder="Slider Title RU"></div>
-                <div class="input_style"><input type="text"  formControlName="title_fr" placeholder="Slider Title FR"></div>
+                <div class="input_style"><input type="text"  formControlName="title_ru" placeholder="Slider Title RU*"></div>
+                <div class="input_style"><input type="text"  formControlName="title_fr" placeholder="Slider Title FR*"></div>
             </div>
             <div class="select_service">
-                <label for="service">Choose a Service:</label>
+                <label for="service">Choose a Service*:</label>
                 <select name="service" id="service"  formControlName="service_id">
                   <option [value]="-1">Service none chuse</option>
                   <option [value]="e.id" *ngFor="let e of serviceData">{{e.title_en}}</option>
                 </select>
             </div>
             <button class="send_butt"  [disabled]="!sliderForm.valid" (click)="sendData()">SEND</button>
+            <div *ngIf="errMSG" style="color: red;">{{errMSG}}</div>
         </form>
         <div class="slider_list" *ngIf="sliderData && sliderData.length">
             <h2 (click)="listCheck = !listCheck">Slider List</h2>

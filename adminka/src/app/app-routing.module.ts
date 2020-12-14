@@ -4,6 +4,8 @@ import { LoginGuard } from './shared/guards/login/login.guard'
 import { LoginComponent } from './pages/login/login.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { ServiceComponent } from './pages/service/service.component';
+import { AboutUsComponent } from './pages/about-us/about-us.component';
+import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 
 
 const routes: Routes = [
@@ -21,6 +23,16 @@ const routes: Routes = [
   {
     path: 'service',
     component: ServiceComponent,
+    canActivate: [LoginGuard]
+  },
+  {
+    path: 'about-us',
+    component: AboutUsComponent,
+    canActivate: [LoginGuard]
+  },
+  {
+    path: 'contact-us',
+    component: ContactUsComponent,
     canActivate: [LoginGuard]
   },
   { path: 'login', component: LoginComponent}

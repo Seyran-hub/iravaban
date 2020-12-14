@@ -17,6 +17,7 @@ export class HomePageComponent implements OnInit {
   updateForm
   listCheck = false
   serviceData = []
+  errMSG
   constructor(
     private homeService: HomeService,    
     public formBuilder: FormBuilder,
@@ -66,7 +67,7 @@ export class HomePageComponent implements OnInit {
     formData.append('title_ru',  this.sliderForm.value.title_ru);
     formData.append('title_fr',  this.sliderForm.value.title_fr);
     formData.append('service_id',  this.sliderForm.value.service_id);
-    this.homeService.setSlider(formData).subscribe(e => {
+    this.homeService.setSlider(formData).subscribe(e => { 
       this.sliderForm.get('title_am').setValue('')
       this.sliderForm.get('title_en').setValue('')
       this.sliderForm.get('title_ru').setValue('')
@@ -75,7 +76,12 @@ export class HomePageComponent implements OnInit {
       this.homeService.getSlider().subscribe(el => {
         this.sliderData = el['result']
       })
-    })
+    },err => {
+      this.errMSG = err.error
+      setTimeout(() => {
+        this.errMSG = undefined
+      }, 3000);
+      console.log(err)})
   }
 
   delete(el){

@@ -9,31 +9,31 @@
                 <input type="file" id="file" (change)="handleFileInput($event.target.files)" />
             </div>
             <div class="inp_block">
-                <div class="input_style"><input type="text" formControlName="title_am" placeholder="Slider Title AM">
+                <div class="input_style"><input type="text" formControlName="title_am" placeholder="Slider Title AM*">
                 </div>
-                <div class="input_style"><input type="text" formControlName="title_en" placeholder="Slider Title EN">
-                </div>
-            </div>
-            <div class="inp_block">
-                <div class="input_style"><input type="text" formControlName="title_ru" placeholder="Slider Title RU">
-                </div>
-                <div class="input_style"><input type="text" formControlName="title_fr" placeholder="Slider Title FR">
+                <div class="input_style"><input type="text" formControlName="title_en" placeholder="Slider Title EN*">
                 </div>
             </div>
             <div class="inp_block">
-                <angular-editor [placeholder]="'Content am'" formControlName="content_am" [config]="editorConfig">
+                <div class="input_style"><input type="text" formControlName="title_ru" placeholder="Slider Title RU*">
+                </div>
+                <div class="input_style"><input type="text" formControlName="title_fr" placeholder="Slider Title FR*">
+                </div>
+            </div>
+            <div class="inp_block">
+                <angular-editor [placeholder]="'Content am*'" formControlName="content_am" [config]="editorConfig">
                 </angular-editor>
             </div>
             <div class="inp_block">
-                <angular-editor [placeholder]="'Content en'" formControlName="content_en" [config]="editorConfig">
+                <angular-editor [placeholder]="'Content en*'" formControlName="content_en" [config]="editorConfig">
                 </angular-editor>
             </div>
             <div class="inp_block">
-                <angular-editor [placeholder]="'Content ru'" formControlName="content_ru" [config]="editorConfig">
+                <angular-editor [placeholder]="'Content ru*'" formControlName="content_ru" [config]="editorConfig">
                 </angular-editor>
             </div>
             <div class="inp_block">
-                <angular-editor [placeholder]="'Content fr'" formControlName="content_fr" [config]="editorConfig"></angular-editor>
+                <angular-editor [placeholder]="'Content fr*'" formControlName="content_fr" [config]="editorConfig"></angular-editor>
             </div>
             <button class="send_butt" [disabled]="!updateForm.valid" (click)="updateData()">SEND</button>
         </form>
@@ -50,31 +50,31 @@
                 <input type="file" id="file" (change)="handleFileInput($event.target.files)" />
             </div>
             <div class="inp_block">
-                <div class="input_style"><input type="text" formControlName="title_am" placeholder="Slider Title AM">
+                <div class="input_style"><input type="text" formControlName="title_am" placeholder="Slider Title AM*">
                 </div>
-                <div class="input_style"><input type="text" formControlName="title_en" placeholder="Slider Title EN">
-                </div>
-            </div>
-            <div class="inp_block">
-                <div class="input_style"><input type="text" formControlName="title_ru" placeholder="Slider Title RU">
-                </div>
-                <div class="input_style"><input type="text" formControlName="title_fr" placeholder="Slider Title FR">
+                <div class="input_style"><input type="text" formControlName="title_en" placeholder="Slider Title EN*">
                 </div>
             </div>
             <div class="inp_block">
-                <angular-editor [placeholder]="'Content am'" formControlName="content_am" [config]="editorConfig">
+                <div class="input_style"><input type="text" formControlName="title_ru" placeholder="Slider Title RU*">
+                </div>
+                <div class="input_style"><input type="text" formControlName="title_fr" placeholder="Slider Title FR*">
+                </div>
+            </div>
+            <div class="inp_block">
+                <angular-editor [placeholder]="'Content am*'" formControlName="content_am" [config]="editorConfig">
                 </angular-editor>
             </div>
             <div class="inp_block">
-                <angular-editor [placeholder]="'Content en'" formControlName="content_en" [config]="editorConfig">
+                <angular-editor [placeholder]="'Content en*'" formControlName="content_en" [config]="editorConfig">
                 </angular-editor>
             </div>
             <div class="inp_block">
-                <angular-editor [placeholder]="'Content ru'" formControlName="content_ru" [config]="editorConfig">
+                <angular-editor [placeholder]="'Content ru*'" formControlName="content_ru" [config]="editorConfig">
                 </angular-editor>
             </div>
             <div class="inp_block">
-                <angular-editor [placeholder]="'Content fr'" formControlName="content_fr" [config]="editorConfig">
+                <angular-editor [placeholder]="'Content fr*'" formControlName="content_fr" [config]="editorConfig">
                 </angular-editor>
             </div>
             <button class="send_butt" [disabled]="!angularForm.valid" (click)="sendData()">SEND</button>

@@ -12,6 +12,8 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { ServiceComponent } from './pages/service/service.component';
 import { AngularEditorModule } from '@kolkov/angular-editor';
 import { ContentPipe } from './shared/pipe/content.pipe';
+import { AboutUsComponent } from './pages/about-us/about-us.component';
+import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { ContentPipe } from './shared/pipe/content.pipe';
     HomePageComponent,
     ServiceComponent,
     ContentPipe,
+    AboutUsComponent,
+    ContactUsComponent,
   ],
   imports: [
     BrowserModule,
