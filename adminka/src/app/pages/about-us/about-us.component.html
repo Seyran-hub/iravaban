@@ -55,9 +55,6 @@
         </div>
         <form class="add_slider" [formGroup]="updateForm" novalidate *ngIf="modal">
             <h2>Update About Us</h2>
-            <div>
-                <input type="file" id="file" (change)="handleFileInput($event.target.files)" />
-            </div>
             <div class="inp_block">
                 <angular-editor [placeholder]="'Content am*'" formControlName="content_am" [config]="editorConfig">
                 </angular-editor>

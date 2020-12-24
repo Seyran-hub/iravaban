@@ -5,7 +5,6 @@ const nodemailer = require('nodemailer');
 const restApi = require("./api");
 const path = require('path')
 const cors = require('cors')
-
 app.use(express.json());
 app.use(cors())
 app.use(express.urlencoded({extended: true}));

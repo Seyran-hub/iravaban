@@ -14,6 +14,7 @@ import { AngularEditorModule } from '@kolkov/angular-editor';
 import { ContentPipe } from './shared/pipe/content.pipe';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
+import { UsersComponent } from './pages/users/users.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { ContactUsComponent } from './pages/contact-us/contact-us.component';
     ContentPipe,
     AboutUsComponent,
     ContactUsComponent,
+    UsersComponent,
   ],
   imports: [
     BrowserModule,
