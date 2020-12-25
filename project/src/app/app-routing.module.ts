@@ -21,16 +21,14 @@ import { TermsConditionsComponent } from './components/pages/terms-conditions/te
 import { ContactComponent } from './components/pages/contact/contact.component';
 
 const routes: Routes = [
-    {path: '', component: HomeOneComponent},
-    {path: 'home-two', component: HomeTwoComponent},
-    {path: 'home-three', component: HomeThreeComponent},
+    {path: '', component: HomeThreeComponent},
     {path: 'about', component: AboutComponent},
     {path: 'attorney', component: AttorneyComponent},
     {path: 'attorney-details', component: AttorneyDetailsComponent},
     {path: 'case-study', component: CaseStudyComponent},
     {path: 'case-study-details', component: CaseStudyDetailsComponent},
-    {path: 'blog', component: BlogComponent},
-    {path: 'blog-details', component: BlogDetailsComponent},
+    {path: 'services', component: BlogComponent},
+    {path: 'service-details', component: BlogDetailsComponent},
     {path: 'practice', component: PracticeComponent},
     {path: 'practice-details', component: PracticeDetailsComponent},
     {path: 'appointment', component: AppointmentComponent},

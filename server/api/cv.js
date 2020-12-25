@@ -5,13 +5,15 @@ const url = require("../global/url");
 const upload = require('../multers/cv-multer.js');
 const fs = require('fs');
 const path = require('path');
+const replace = require('../global/replace')
 const connetctSQL = require('../global/mysql')
 
 api.use(express.json());
 
 api.post('/cv-data', upload.single('file'),  function (req, res) {
     let img_url = `${url}/cv/${req.file.filename}`
-        connetctSQL.query("INSERT INTO `cv`(`status`, `name`, `surname`, `phone`, `education`, `experience`, `languages`,`computer_skills`, `img_url`, `img_name`) VALUES ('" + req.body.status + "','" + req.body.name + "','" + req.body.surname + "','" + req.body.phone + "','" + req.body.education + "','" + req.body.experience + "','" + req.body.languages + "','" + req.body.computer_skills + "','" + img_url + "','" + req.file.filename + "')", function (err, result, fields) {
+    req.body = replace(req.body, true)
+    connetctSQL.query("INSERT INTO `cv`(`status`, `name`, `surname`, `phone`, `education`, `experience`, `languages`,`computer_skills`, `img_url`, `img_name`) VALUES ('" + req.body.status + "','" + req.body.name + "','" + req.body.surname + "','" + req.body.phone + "','" + req.body.education + "','" + req.body.experience + "','" + req.body.languages + "','" + req.body.computer_skills + "','" + img_url + "','" + req.file.filename + "')", function (err, result, fields) {
             if (err) throw err;
             res.status(201).json({ result });
         });
@@ -20,6 +22,7 @@ api.post('/cv-data', upload.single('file'),  function (req, res) {
 api.get('/cv-data', function (req, res) {
     connetctSQL.query("SELECT * FROM `cv` WHERE status=0", function (err, result, fields) {
         if (err) throw err;
+        result = replace(result, false)
         res.status(201).json({ result });
     });
 })
@@ -27,6 +30,7 @@ api.get('/cv-data', function (req, res) {
 api.get('/cv-data-status', function (req, res) {
     connetctSQL.query("SELECT * FROM `cv` WHERE status=1", function (err, result, fields) {
         if (err) throw err;
+        result = replace(result, false)
         res.status(201).json({ result });
     });
 })

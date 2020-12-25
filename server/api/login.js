@@ -4,7 +4,6 @@ const token = require("../global/token");
 api.use(express.json());
 
 api.post('/send_login', (req, res) => {
-    console.log(req.query,req.body,'ddddd')
     if(req.body.login == 'admin' && req.body.password == 'admin')
       res.status(200).send({token: token});
     else{

@@ -7,6 +7,7 @@
         <form class="add_slider" [formGroup]="angularForm" novalidate  *ngIf="!angularData.length">
             <h2>Add About Us</h2>
             <div class="file_inp">
+                <div>1920x420</div>
                 <input type="file" id="file" (change)="handleFileInput($event.target.files)" />
             </div>
             <div class="inp_block">

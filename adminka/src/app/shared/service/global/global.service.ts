@@ -6,7 +6,11 @@ import { Injectable } from '@angular/core';
 export class GlobalService {
   url = 'http://localhost:3000'
   token 
+
+
   constructor() {
     if(localStorage.getItem('adminToken')) this.token = localStorage.getItem('adminToken')
    }
+
+
 }

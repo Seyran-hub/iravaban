@@ -5,8 +5,6 @@
                 <h2>Our Attorneys</h2>
 
                 <ul>
-                    <li><a routerLink="/">Home</a></li>
-                    <li><i class="icofont-simple-right"></i></li>
                     <li>Attorneys</li>
                 </ul>
             </div>
@@ -14,141 +12,21 @@
     </div>
 </div>
 
-<section class="team-area team-area-two pt-100">
+<section class="team-area team-area-two pt-100"  *ngIf='expertData'>
     <div class="container">
         <div class="row">
-            <div class="col-sm-6 col-lg-3">
+            <div class="col-sm-6 col-lg-3"  *ngFor="let e of expertData">
                 <div class="team-item wow fadeInUp" data-wow-delay=".3s">
-                    <img src="assets/img/home-one/team/1.jpg" alt="Team">
+                    <img [src]="e.img_url" alt="Team">
 
                     <div class="team-inner">
                         <ul>
-                            <li><a href="https://www.facebook.com/" target="_blank"><i class="icofont-facebook"></i></a></li>
-                            <li><a href="https://www.instagram.com/" target="_blank"><i class="icofont-instagram"></i></a></li>
-                            <li><a href="https://www.twitter.com/" target="_blank"><i class="icofont-twitter"></i></a></li>
-                            <li><a href="https://www.linkedin.com/" target="_blank"><i class="icofont-linkedin"></i></a></li>
+                            <li><a *ngIf="e.facebook" [href]="e.facebook" target="_blank"><i class="icofont-facebook"></i></a></li>
+                            <li><a *ngIf="e.instagram" [href]="e.instagram" target="_blank"><i class="icofont-instagram"></i></a></li>
+                            <li><a *ngIf="e.twitter" [href]="e.twitter" target="_blank"><i class="icofont-twitter"></i></a></li>
+                            <li><a *ngIf="e.linkedin" [href]="e.linkedin" target="_blank"><i class="icofont-linkedin"></i></a></li>
                         </ul>
-                        <h3><a routerLink="/attorney-details">Attor. Jerry Hudson</a></h3>
-                        <span>Family Consultant</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-6 col-lg-3">
-                <div class="team-item wow fadeInUp" data-wow-delay=".4s">
-                    <img src="assets/img/home-one/team/2.jpg" alt="Team">
-                    
-                    <div class="team-inner">
-                        <ul>
-                            <li><a href="https://www.facebook.com/" target="_blank"><i class="icofont-facebook"></i></a></li>
-                            <li><a href="https://www.instagram.com/" target="_blank"><i class="icofont-instagram"></i></a></li>
-                            <li><a href="https://www.twitter.com/" target="_blank"><i class="icofont-twitter"></i></a></li>
-                            <li><a href="https://www.linkedin.com/" target="_blank"><i class="icofont-linkedin"></i></a></li>
-                        </ul>
-                        <h3><a routerLink="/attorney-details">Attor. Juho Hudson</a></h3>
-                        <span>Criminal Consultant</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-6 col-lg-3">
-                <div class="team-item wow fadeInUp" data-wow-delay=".5s">
-                    <img src="assets/img/home-one/team/3.jpg" alt="Team">
-                    
-                    <div class="team-inner">
-                        <ul>
-                            <li><a href="https://www.facebook.com/" target="_blank"><i class="icofont-facebook"></i></a></li>
-                            <li><a href="https://www.instagram.com/" target="_blank"><i class="icofont-instagram"></i></a></li>
-                            <li><a href="https://www.twitter.com/" target="_blank"><i class="icofont-twitter"></i></a></li>
-                            <li><a href="https://www.linkedin.com/" target="_blank"><i class="icofont-linkedin"></i></a></li>
-                        </ul>
-                        <h3><a routerLink="/attorney-details">Attor. Sarah Se</a></h3>
-                        <span>Divorce Consultant</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-6 col-lg-3">
-                <div class="team-item wow fadeInUp" data-wow-delay=".6s">
-                    <img src="assets/img/home-one/team/4.jpg" alt="Team">
-                    
-                    <div class="team-inner">
-                        <ul>
-                            <li><a href="https://www.facebook.com/" target="_blank"><i class="icofont-facebook"></i></a></li>
-                            <li><a href="https://www.instagram.com/" target="_blank"><i class="icofont-instagram"></i></a></li>
-                            <li><a href="https://www.twitter.com/" target="_blank"><i class="icofont-twitter"></i></a></li>
-                            <li><a href="https://www.linkedin.com/" target="_blank"><i class="icofont-linkedin"></i></a></li>
-                        </ul>
-                        <h3><a routerLink="/attorney-details">Attor. Aikin Ward</a></h3>
-                        <span>Business Consultant</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-6 col-lg-3">
-                <div class="team-item wow fadeInUp" data-wow-delay=".3s">
-                    <img src="assets/img/home-one/team/5.jpg" alt="Team">
-                    
-                    <div class="team-inner">
-                        <ul>
-                            <li><a href="https://www.facebook.com/" target="_blank"><i class="icofont-facebook"></i></a></li>
-                            <li><a href="https://www.instagram.com/" target="_blank"><i class="icofont-instagram"></i></a></li>
-                            <li><a href="https://www.twitter.com/" target="_blank"><i class="icofont-twitter"></i></a></li>
-                            <li><a href="https://www.linkedin.com/" target="_blank"><i class="icofont-linkedin"></i></a></li>
-                        </ul>
-                        <h3><a routerLink="/attorney-details">Attor. Mic John</a></h3>
-                        <span>Family Consultant</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-6 col-lg-3">
-                <div class="team-item wow fadeInUp" data-wow-delay=".4s">
-                    <img src="assets/img/home-one/team/6.jpg" alt="Team">
-                    
-                    <div class="team-inner">
-                        <ul>
-                            <li><a href="https://www.facebook.com/" target="_blank"><i class="icofont-facebook"></i></a></li>
-                            <li><a href="https://www.instagram.com/" target="_blank"><i class="icofont-instagram"></i></a></li>
-                            <li><a href="https://www.twitter.com/" target="_blank"><i class="icofont-twitter"></i></a></li>
-                            <li><a href="https://www.linkedin.com/" target="_blank"><i class="icofont-linkedin"></i></a></li>
-                        </ul>
-                        <h3><a routerLink="/attorney-details">Attor. Jac Micheal</a></h3>
-                        <span>Criminal Consultant</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-6 col-lg-3">
-                <div class="team-item wow fadeInUp" data-wow-delay=".5s">
-                    <img src="assets/img/home-one/team/7.jpg" alt="Team">
-                    
-                    <div class="team-inner">
-                        <ul>
-                            <li><a href="https://www.facebook.com/" target="_blank"><i class="icofont-facebook"></i></a></li>
-                            <li><a href="https://www.instagram.com/" target="_blank"><i class="icofont-instagram"></i></a></li>
-                            <li><a href="https://www.twitter.com/" target="_blank"><i class="icofont-twitter"></i></a></li>
-                            <li><a href="https://www.linkedin.com/" target="_blank"><i class="icofont-linkedin"></i></a></li>
-                        </ul>
-                        <h3><a routerLink="/attorney-details">Attor. Tom Renson</a></h3>
-                        <span>Divorce Consultant</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-6 col-lg-3">
-                <div class="team-item wow fadeInUp" data-wow-delay=".6s">
-                    <img src="assets/img/home-one/team/8.jpg" alt="Team">
-                    
-                    <div class="team-inner">
-                        <ul>
-                            <li><a href="https://www.facebook.com/" target="_blank"><i class="icofont-facebook"></i></a></li>
-                            <li><a href="https://www.instagram.com/" target="_blank"><i class="icofont-instagram"></i></a></li>
-                            <li><a href="https://www.twitter.com/" target="_blank"><i class="icofont-twitter"></i></a></li>
-                            <li><a href="https://www.linkedin.com/" target="_blank"><i class="icofont-linkedin"></i></a></li>
-                        </ul>
-                        <h3><a routerLink="/attorney-details">Attor. Tomy Shak</a></h3>
-                        <span>Business Consultant</span>
+                        <h3><a (click)="navigate(e)"  routerLink="/attorney-details">{{e['name' + globalService.leng] + ' ' + e['surname' + globalService.leng]}}</a></h3>
                     </div>
                 </div>
             </div>
