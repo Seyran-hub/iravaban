@@ -1226,7 +1226,8 @@ button {
     }
 }
 .blog-item {
-    border-radius: 0 0 8px 8px;
+    border-radius: 8px;
+    overflow: hidden;
     margin-bottom: 30px;
     box-shadow: 0px 0px 12px 0px #ddddddad;
     transition: $transition;

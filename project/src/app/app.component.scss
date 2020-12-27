@@ -1,0 +1,43 @@
+.modal_fm{
+    width: 300px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 20;
+    padding: 8px;
+    box-shadow: 0px 0px 12px 0px #ddddddad;
+    background-color: #fff;
+    border-radius: 6px;
+}
+
+.border_err{
+    border-color: red !important;
+}
+
+.border_err::placeholder{
+    color: red !important
+}
+
+
+@media only screen and (max-width: 768px){
+    .modal_fm{
+        display: none;
+    }
+}
+
+.contact-wrap .form-group .form-control{
+    border-color: #b69d74;
+}
+
+
+.close_fm{
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    cursor: pointer;
+}
+
+h3{
+    overflow: hidden;
+    overflow-wrap: break-word;
+}
