@@ -8,7 +8,6 @@ api.use(express.json());
 
 api.post('/email', function (req, res) {
         // main(req.body.subject,req.body.html,req.body.to)
-        console.log(req.body.subject,req.body.html,req.body.to)
         res.status(200).send(true);
 })
 

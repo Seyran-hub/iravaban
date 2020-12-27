@@ -1,21 +1,22 @@
 <div class="home-slider-area">
     <div class="home-slider owl-theme owl-carousel">
-        <div class="slider-item slider-bg-one">
+        <div class="slider-item slider-bg-one" *ngFor="let e of globalService.sliderData">
             <div class="d-table">
                 <div class="d-table-cell">
                     <div class="container">
                         <div class="row align-items-center">
                             <div class="col-lg-5">
                                 <div class="slider-text">
-                                    <h1>It’s Our Pride To Fight For Your Dream</h1>
-                                    <p>FIGHTING FOR YOUR DREAM</p>
-                                    <a routerLink="/">FREE CONSULTATION <i class="icofont-arrow-right"></i></a>
+                                    <h1>{{e['title' + globalService.leng]}}</h1>
+                                    <p *ngIf="e.service">
+                                        <a (click)="getService(e.service)" routerLink="/service-details">Go to service <i class="icofont-arrow-right"></i></a>
+                                    </p>
                                 </div>
                             </div>
 
                             <div class="col-lg-7">
                                 <div class="slider-shape">
-                                    <img class="s-s-one" src="assets/img/home-two/home-slider/2.png" alt="">
+                                    <img class="s-s-one" [src]="e.img_url" alt="">
                                 </div>
                             </div>
                         </div>
@@ -23,8 +24,7 @@
                 </div>
             </div>
         </div>
-
-        <div class="slider-item slider-bg-one">
+        <!-- <div class="slider-item slider-bg-one">
             <div class="d-table">
                 <div class="d-table-cell">
                     <div class="container">
@@ -48,6 +48,7 @@
             </div>
         </div>
 
+
         <div class="slider-item slider-bg-one">
             <div class="d-table">
                 <div class="d-table-cell">
@@ -70,7 +71,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 </div>
 

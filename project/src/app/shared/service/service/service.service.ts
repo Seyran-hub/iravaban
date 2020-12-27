@@ -24,6 +24,10 @@ export class ServiceService {
     return  this.http.get(`${this.globalService.url}/service-data`)
   }
 
+  getServiceId(id){
+    return  this.http.post(`${this.globalService.url}/service-data-id`, id)
+  }
+
   deleteService(data: any){
     return  this.http.delete(`${this.globalService.url}/service-data/${data.id}/${data.token}/${data.fileName}`)
   }

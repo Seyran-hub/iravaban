@@ -42,6 +42,14 @@ api.get('/service-data', function (req, res) {
     });
 })
 
+api.post('/service-data-id', function (req, res) {
+    connetctSQL.query("SELECT * FROM `service` WHERE id='"+ req.body.serviceId + "'", function (err, result, fields) {
+        if (err) throw err;
+        result = replace(result, false)
+        res.status(201).json({ result });
+    });
+})
+
 api.delete('/service-data/:id/:token/:fileName', function (req, res) {
     if (JSON.parse(req.params.token) == token) {
         connetctSQL.query("DELETE FROM `service` WHERE id='" + req.params.id + "'", function (err, result, fields) {

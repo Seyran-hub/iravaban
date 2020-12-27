@@ -85,7 +85,6 @@ export class UsersComponent implements OnInit {
   }
 
   sendData() {
-    console.log(this.angularForm.value)
     const formData = new FormData();
     formData.append('file', this.fileToUpload, this.fileToUpload.name);
     formData.append('fileName', this.fileToUpload.name);
@@ -127,13 +126,11 @@ export class UsersComponent implements OnInit {
       this.angularForm.get('email').setValue('')
       this.usersService.getUsers().subscribe(el => {
         this.angularData = el['result']
-        console.log(el)
       })
     })
   }
 
   delete(el) {
-    console.log(el)
     let data = {
       id: el.id,
       fileName: el.img_name,
@@ -147,7 +144,6 @@ export class UsersComponent implements OnInit {
   }
 
   editModal(data) {
-    console.log(data)
     this.updateForm.get('name_am').setValue(data.name_am)
     this.updateForm.get('name_en').setValue(data.name_en)
     this.updateForm.get('name_ru').setValue(data.name_ru)
