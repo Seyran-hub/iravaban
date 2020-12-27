@@ -10,7 +10,7 @@ import { UsersService } from 'src/app/shared/service/users/users.service';
 export class ExpertsComponent implements OnInit {
   expertData
   leng
-  constructor(private userService: UsersService,private globalService: GlobalService) { }
+  constructor(private userService: UsersService,public globalService: GlobalService) { }
 
   ngOnInit(): void {
     this.leng = GlobalService

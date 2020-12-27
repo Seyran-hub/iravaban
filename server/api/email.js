@@ -7,12 +7,12 @@ const nodemailer = require("nodemailer");
 api.use(express.json());
 
 api.post('/email', function (req, res) {
-    main(req.body.subject,req.body.html).then(e => {
+        // main(req.body.subject,req.body.html,req.body.to)
+        console.log(req.body.subject,req.body.html,req.body.to)
         res.status(200).send(true);
-    })
 })
 
-async function main(subject,html) {
+async function main(subject,html,to) {
     // Generate test SMTP service account from ethereal.email
     // Only needed if you don't have a real mail account for testing
 
@@ -30,7 +30,7 @@ async function main(subject,html) {
     // send mail with defined transport object
     let info = await transporter.sendMail({
         from: 'arman.babajanyan.fd@gmail.com', // sender address
-        to: "arman.babajanyan1994@gmail.com", // list of receivers
+        to: to, // list of receivers
         subject: subject, // Subject line
         html: html, // plain text body
     });

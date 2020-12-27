@@ -1,0 +1,11 @@
+.border_err{
+    border-color: red !important;
+}
+
+.border_err::placeholder{
+    color: red !important
+}
+
+input{
+    color: #2d2d2d
+}

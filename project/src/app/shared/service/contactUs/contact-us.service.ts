@@ -11,11 +11,11 @@ export class ContactUsService {
 
   constructor(
     private http: HttpClient,
-    private globalService: GlobalService
+    public globalService: GlobalService
   ) { }
 
-  setContactUs(data: any){
-    return  this.http.post(`${this.globalService.url}/contact-us-data`,data).pipe(
+  setEmail(data: any){
+    return  this.http.post(`${this.globalService.url}/email`,data).pipe(
       catchError(err => throwError(err))
       );
   }
@@ -24,11 +24,4 @@ export class ContactUsService {
     return  this.http.get(`${this.globalService.url}/contact-us-data`)
   }
 
-  deleteContactUs(data: any){
-    return  this.http.delete(`${this.globalService.url}/contact-us-data/${data.id}/${data.token}`)
-  }
-
-  updateContactUs(data: any){
-    return  this.http.put(`${this.globalService.url}/contact-us-data`, data)
-  }
 }

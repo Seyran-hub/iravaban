@@ -17,7 +17,14 @@
                             <li><a *ngIf="e.twitter" [href]="e.twitter" target="_blank"><i class="icofont-twitter"></i></a></li>
                             <li><a *ngIf="e.linkedin" [href]="e.linkedin" target="_blank"><i class="icofont-linkedin"></i></a></li>
                         </ul>
-                        <h3><a (click)="navigate(e)"  routerLink="/attorney-details">{{e['name' + globalService.leng] + ' ' + e['surname' + globalService.leng]}}</a></h3>
+                        <h3><a (click)="navigate(e)"  routerLink="/attorney-details">
+                            <p class="m-0">
+                                {{e['name' + globalService.leng]}}
+                            </p>
+                            <p class="m-0">
+                                {{e['surname' + globalService.leng]}}
+                            </p>
+                        </a></h3>
                     </div>
                 </div>
             </div>

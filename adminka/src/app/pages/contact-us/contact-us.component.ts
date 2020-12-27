@@ -44,7 +44,7 @@ export class ContactUsComponent implements OnInit {
       address_en: ["", Validators.required],
       address_ru: ["", Validators.required],
       address_fr: ["", Validators.required],
-      emile: [""],
+      email: [""],
       lang_am: ["", Validators.required],
       lang_en: ["", Validators.required],
       lang_ru: ["", Validators.required],
@@ -69,7 +69,7 @@ export class ContactUsComponent implements OnInit {
       address_en: ["", Validators.required],
       address_ru: ["", Validators.required],
       address_fr: ["", Validators.required],
-      emile: [""],
+      email: [""],
       lang_am: ["", Validators.required],
       lang_en: ["", Validators.required],
       lang_ru: ["", Validators.required],
@@ -99,7 +99,7 @@ export class ContactUsComponent implements OnInit {
       this.angularForm.get('address_en').setValue('')
       this.angularForm.get('address_ru').setValue('')
       this.angularForm.get('address_fr').setValue('')
-      this.angularForm.get('emile').setValue('')
+      this.angularForm.get('email').setValue('')
       this.angularForm.get('lang_am').setValue('')
       this.angularForm.get('lang_en').setValue('')
       this.angularForm.get('lang_ru').setValue('')
@@ -140,7 +140,7 @@ export class ContactUsComponent implements OnInit {
     this.updateForm.get('address_en').setValue(data.address_en)
     this.updateForm.get('address_ru').setValue(data.address_ru)
     this.updateForm.get('address_fr').setValue(data.address_fr)
-    this.updateForm.get('emile').setValue(data.emile)
+    this.updateForm.get('email').setValue(data.email)
     this.updateForm.get('lang_am').setValue(data.lang_am)
     this.updateForm.get('lang_en').setValue(data.lang_en)
     this.updateForm.get('lang_ru').setValue(data.lang_ru)

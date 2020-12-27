@@ -9,10 +9,11 @@ import { ServiceService } from 'src/app/shared/service/service/service.service';
 })
 export class BlogComponent implements OnInit {
   serviceData
-  constructor(private service: ServiceService,private globalService: GlobalService) { }
+  constructor(private service: ServiceService,public globalService: GlobalService) { }
 
   ngOnInit(): void {
     this.service.getService().subscribe(e => {
+      e['result'] = e['result'].reverse()
       if(e['result'])
         this.serviceData = e['result']
     })

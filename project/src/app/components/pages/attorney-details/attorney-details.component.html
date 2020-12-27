@@ -1,5 +1,5 @@
 <div class="page-title-area title-img-one">
-    
+
 </div>
 
 <div class="attorney-details pt-100 pb-70">
@@ -12,10 +12,20 @@
                     <div class="attor-details-left">
                         <div class="attor-social">
                             <ul>
-                                <li><a *ngIf="expertData.facebook" [href]="expertData.facebook" target="_blank"><i class="icofont-facebook"></i></a></li>
-                                <li><a *ngIf="expertData.instagram" [href]="expertData.instagram" target="_blank"><i class="icofont-instagram"></i></a></li>
-                                <li><a *ngIf="expertData.twitter" [href]="expertData.twitter" target="_blank"><i class="icofont-twitter"></i></a></li>
-                                <li><a *ngIf="expertData.linkedin" [href]="expertData.linkedin" target="_blank"><i class="icofont-linkedin"></i></a></li>
+                                <li><a *ngIf="expertData.facebook" [href]="expertData.facebook" target="_blank"><i
+                                            class="icofont-facebook"></i></a></li>
+                                <li><a *ngIf="expertData.instagram" [href]="expertData.instagram" target="_blank"><i
+                                            class="icofont-instagram"></i></a></li>
+                                <li><a *ngIf="expertData.twitter" [href]="expertData.twitter" target="_blank"><i
+                                            class="icofont-twitter"></i></a></li>
+                                <li><a *ngIf="expertData.linkedin" [href]="expertData.linkedin" target="_blank"><i
+                                            class="icofont-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                        <div _ngcontent-juj-c10="" class="attor-social-details">
+                            <ul>
+                                <li><i class="flaticon-email"></i><a
+                                        href="mailto:hello@lufz.com">{{expertData['email']}}</a></li>
                             </ul>
                         </div>
                     </div>
@@ -26,7 +36,8 @@
                 <div class="attor-details-item">
                     <div class="attor-details-right">
                         <div class="attor-details-name">
-                            <h2>{{expertData['name' + globalService.leng] + ' ' + expertData['surname' + globalService.leng]}}</h2>
+                            <h2>{{expertData['name' + globalService.leng] + ' ' + expertData['surname' +
+                                globalService.leng]}}</h2>
                         </div>
 
                         <div class="attor-details-things" [innerHTML]="expertData['content' + globalService.leng]">
@@ -38,45 +49,57 @@
     </div>
 </div>
 
-<div class="contact-form contact-form-two pb-100">
+
+<div class="contact-form contact-form-two pb-100container-fluid">
     <div class="container">
         <div class="contact-wrap">
-            <form id="contactForm" class="">
-                <h2>Get Appointment</h2>
+            <form id="contactForm" [formGroup]="contactForm" novalidate>
                 <div class="row">
                     <div class="col-sm-6 col-lg-6">
                         <div class="form-group">
-                            <input type="text" name="name" id="name" class="form-control" placeholder="Your Full Name">
+                            <input type="text" name="name" id="name" placeholder="Your Full Name"
+                                [class]="submitted && f.fullName.status == 'INVALID' ? 'border_err form-control':'form-control'"
+                                formControlName="fullName">
                         </div>
                     </div>
 
                     <div class="col-sm-6 col-lg-6">
                         <div class="form-group">
-                            <input type="email" name="email" id="email" class="form-control" placeholder="Your Email">
+                            <input type="email" name="email" id="email" placeholder="Your Email"
+                                [class]="submitted && f.email.status == 'INVALID' ? 'border_err form-control':'form-control'"
+                                formControlName="email">
                         </div>
                     </div>
 
                     <div class="col-sm-6 col-lg-6">
                         <div class="form-group">
-                            <input type="text" name="phone_number" id="phone_number" class="form-control" placeholder="Your Phone">
+                            <input type="text" name="phone_number" id="phone_number" placeholder="Your Phone"
+                                [class]="submitted && f.phone.status == 'INVALID' ? 'border_err form-control':'form-control'"
+                                formControlName="phone">
                         </div>
                     </div>
 
                     <div class="col-sm-6 col-lg-6">
                         <div class="form-group">
-                            <input type="text" name="msg_subject" id="msg_subject" class="form-control" placeholder="Subject">
+                            <input type="text" name="msg_subject" id="msg_subject" placeholder="Subject"
+                                [class]="submitted && f.subject.status == 'INVALID' ? 'border_err form-control':'form-control'"
+                                formControlName="subject">
                         </div>
                     </div>
 
                     <div class="col-md-12 col-lg-12">
                         <div class="form-group">
-                            <textarea name="message" class="form-control" id="message" cols="30" rows="8" placeholder="Case Description"></textarea>
+                            <textarea name="message" class="form-control" id="message" cols="30" rows="8"
+                                placeholder="Case Description"
+                                [class]="submitted && f.description.status == 'INVALID' ? 'border_err form-control':'form-control'"
+                                formControlName="description"></textarea>
                         </div>
                     </div>
 
                     <div class="col-md-12 col-lg-12">
                         <div class="text-center">
-                            <button type="submit" class="contact-btn">Submit Case</button>
+                            <button class="contact-btn" (click)="send()">Submit Case</button><img *ngIf="success"
+                                class="pl-2" src="/assets/img/icon/checked.svg" alt="">
                         </div>
                     </div>
                 </div>

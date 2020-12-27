@@ -28,6 +28,8 @@ import { TermsConditionsComponent } from './components/pages/terms-conditions/te
 import { ContactComponent } from './components/pages/contact/contact.component';
 import { ExpertsComponent } from './components/blok/experts/experts.component';
 import { ServicesComponent } from './components/blok/services/services.component';
+import { AgmCoreModule } from '@agm/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -61,6 +63,10 @@ import { ServicesComponent } from './components/blok/services/services.component
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBrZcAFat6HPoli5mZVKJ397CBpk8IJvj0'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

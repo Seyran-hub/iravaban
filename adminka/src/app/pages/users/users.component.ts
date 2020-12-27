@@ -50,6 +50,7 @@ export class UsersComponent implements OnInit {
       content_en: ["", Validators.required],
       content_ru: ["", Validators.required],
       content_fr: ["", Validators.required],
+      email: ["", Validators.required],
       id: ["", Validators.required],
     });
 
@@ -70,6 +71,7 @@ export class UsersComponent implements OnInit {
       content_en: ["", Validators.required],
       content_ru: ["", Validators.required],
       content_fr: ["", Validators.required],
+      email: ["", Validators.required],
       file: ["", Validators.required]
     });
   }
@@ -104,6 +106,7 @@ export class UsersComponent implements OnInit {
     formData.append('content_en', this.angularForm.value.content_en);
     formData.append('content_ru', this.angularForm.value.content_ru);
     formData.append('content_fr', this.angularForm.value.content_fr);
+    formData.append('email', this.angularForm.value.email);
     this.usersService.setUser(formData).subscribe(e => {
       this.angularForm.get('name_am').setValue('')
       this.angularForm.get('name_en').setValue('')
@@ -121,6 +124,7 @@ export class UsersComponent implements OnInit {
       this.angularForm.get('content_en').setValue('')
       this.angularForm.get('content_ru').setValue('')
       this.angularForm.get('content_fr').setValue('')
+      this.angularForm.get('email').setValue('')
       this.usersService.getUsers().subscribe(el => {
         this.angularData = el['result']
         console.log(el)
@@ -160,6 +164,7 @@ export class UsersComponent implements OnInit {
     this.updateForm.get('content_en').setValue(data.content_en)
     this.updateForm.get('content_ru').setValue(data.content_ru)
     this.updateForm.get('content_fr').setValue(data.content_fr)
+    this.updateForm.get('email').setValue(data.email)
     this.updateForm.get('id').setValue(data.id)
     this.modal = !this.modal
   }

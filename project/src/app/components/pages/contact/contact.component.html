@@ -3,34 +3,16 @@
         <div class="d-table-cell">
             <div class="page-title-text">
                 <h2>Contact Us</h2>
-
-                <ul>
-                    <li><a routerLink="/">Home</a></li>
-                    <li><i class="icofont-simple-right"></i></li>
-                    <li>Contact Us</li>
-                </ul>
             </div>
         </div>
     </div>
 </div>
 
-<div class="contact-form contact-form-four pb-100">
+<div class="contact-form contact-form-four pb-100" *ngIf="contactData">
     <div class="loaction-area">
         <div class="container">
             <div class="row location-bg">
-                <div class="col-sm-6 col-lg-4">
-                    <div class="location-item">
-                        <div class="location-icon">
-                            <i class="flaticon-pin"></i>
-                        </div>
-                        <h3>Location</h3>
-                        <ul>
-                            <li>2108-267 Road Quadra,Toronto, Victiria Canada</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-lg-4">
+                <div class="col-sm-6 col-lg-6">
                     <div class="location-item">
                         <div class="location-icon">
                             <i class="flaticon-call"></i>
@@ -39,24 +21,90 @@
                         <h3>Phone</h3>
 
                         <ul>
-                            <li><a href="tel:+0755543332322">+07 5554 3332 322</a></li>
-                            <li><a href="tel:+0555962435736">+05 5596 2435 736</a></li>
+                            <li><a [href]="phone">{{contactData.phone}}</a></li>
+                            <li></li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="col-sm-6 offset-sm-3 offset-lg-0 col-lg-4">
+                <div class="col-sm-6 col-lg-6">
                     <div class="location-item">
                         <div class="location-icon">
                             <i class="flaticon-email"></i>
                         </div>
-                        
                         <h3>Email</h3>
+                        <ul>
+                            <li><a [href]="email">{{contactData.email}}</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-6">
+                    <div class="location-item">
+                        <div class="location-icon">
+                            <i><img src="/assets/img/icon/home-address.svg" alt=""></i>
+                        </div>
+
+                        <h3>Address</h3>
 
                         <ul>
-                            <li><a href="mailto:hello@lufz.com">hello@lufz.com</a></li>
-                            <li><a href="mailto:info@lufz.com">info@lufz.com</a></li>
+                            <li>{{contactData['address' + globalService.leng]}}</li>
+                            <li></li>
                         </ul>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-6">
+                    <div class="location-item">
+                        <div class="location-icon">
+                            <i><img src="/assets/img/icon/calendar.svg" alt=""></i>
+                        </div>
+                        <h3>Date</h3>
+                        <ul>
+                            <li>{{contactData['date' + globalService.leng]}}</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-6">
+                    <div class="location-item">
+                        <div class="location-icon">
+                            <i><img src="/assets/img/icon/clock.svg" alt=""></i>
+                        </div>
+
+                        <h3>Time</h3>
+
+                        <ul>
+                            <li>{{contactData['time']}}</li>
+                            <li></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-6">
+                    <div class="location-item">
+                        <div class="location-icon">
+                            <i><img src="/assets/img/icon/global.svg" alt=""></i>
+                        </div>
+                        <h3>Language</h3>
+                        <ul>
+                            <li>{{contactData['lang' + globalService.leng]}}</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="location-item pl-3">
+                        <h3 class="text-center">Social</h3>
+                        <div class="attor-social">
+                            <div class="social-icon">
+                                <a *ngIf="contactData.facebook" [href]="contactData.facebook" target="_blank"><i
+                                        class="icofont-facebook"></i></a>
+                                <a *ngIf="contactData.instagram" [href]="contactData.instagram" target="_blank"><i
+                                        class="icofont-instagram"></i></a>
+                                <a *ngIf="contactData.twitter" [href]="contactData.twitter" target="_blank"><i
+                                        class="icofont-twitter"></i></a>
+                                <a *ngIf="contactData.linkedin" [href]="contactData.linkedin" target="_blank"><i
+                                        class="icofont-linkedin"></i></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -64,41 +112,41 @@
     </div>
 
     <div class="container-fluid">
-        <form id="contactForm">
+        <form id="contactForm" [formGroup]="contactForm" novalidate>
             <div class="row contact-wrap">
                 <div class="col-sm-6 col-lg-6">
                     <div class="form-group">
-                        <input type="text" name="name" id="name" class="form-control" required data-error="Please enter your name" placeholder="Your Full Name">
+                        <input type="text" name="name" id="name" placeholder="Your Full Name" [class]="submitted && f.fullName.status == 'INVALID' ? 'border_err form-control':'form-control'" formControlName="fullName" >
                     </div>
                 </div>
 
                 <div class="col-sm-6 col-lg-6">
                     <div class="form-group">
-                        <input type="email" name="email" id="email" class="form-control" required data-error="Please enter your email" placeholder="Your Email">
+                        <input type="email" name="email" id="email" placeholder="Your Email"  [class]="submitted && f.email.status == 'INVALID' ? 'border_err form-control':'form-control'" formControlName="email" >
                     </div>
                 </div>
 
                 <div class="col-sm-6 col-lg-6">
                     <div class="form-group">
-                        <input type="text" name="phone_number" id="phone_number" required data-error="Please enter your number" class="form-control" placeholder="Your Phone">
+                        <input type="text" name="phone_number" id="phone_number" placeholder="Your Phone" [class]="submitted && f.phone.status == 'INVALID' ? 'border_err form-control':'form-control'" formControlName="phone" >
                     </div>
                 </div>
 
                 <div class="col-sm-6 col-lg-6">
                     <div class="form-group">
-                        <input type="text" name="msg_subject" id="msg_subject" class="form-control" required data-error="Please enter your subject" placeholder="Subject">
+                        <input type="text" name="msg_subject" id="msg_subject" placeholder="Subject" [class]="submitted && f.subject.status == 'INVALID' ? 'border_err form-control':'form-control'" formControlName="subject" >
                     </div>
                 </div>
 
                 <div class="col-md-12 col-lg-12">
                     <div class="form-group">
-                        <textarea name="message" class="form-control" id="message" cols="30" rows="8" required data-error="Write your message" placeholder="Case Description"></textarea>
+                        <textarea name="message" class="form-control" id="message" cols="30" rows="8" placeholder="Case Description"  [class]="submitted && f.description.status == 'INVALID' ? 'border_err form-control':'form-control'" formControlName="description"></textarea>
                     </div>
                 </div>
 
                 <div class="col-md-12 col-lg-12">
                     <div class="text-center">
-                        <button type="submit" class="contact-btn">Submit Case</button>
+                        <button class="contact-btn" (click)="send()">Submit Case</button><img *ngIf="success" class="pl-2" src="/assets/img/icon/checked.svg" alt="">
                     </div>
                 </div>
             </div>
@@ -106,6 +154,12 @@
     </div>
 </div>
 
-<div class="map-area">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d158857.72810813924!2d-0.24168018863114898!3d51.528771840455114!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon%2C%20UK!5e0!3m2!1sen!2sbd!4v1591087986221!5m2!1sen!2sbd"></iframe>
+<div class="map-area" *ngIf="contactData">
+    <agm-map [latitude]="contactData.lat" [longitude]="contactData.lot" [zoom]="10" [scrollwheel]="false">
+        <agm-marker
+            [latitude]="contactData.lat"
+            [longitude]="contactData.lot"
+            >
+        </agm-marker>
+    </agm-map>
 </div>

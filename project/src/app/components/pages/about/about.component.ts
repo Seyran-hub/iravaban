@@ -14,7 +14,7 @@ export class AboutComponent implements OnInit {
   content
   constructor(
     private AboutUsService: AboutUsService,
-    private globalService: GlobalService
+    public globalService: GlobalService
   ) { }
 
   ngOnInit(): void {

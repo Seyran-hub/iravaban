@@ -9,7 +9,7 @@ import { UsersService } from 'src/app/shared/service/users/users.service';
 })
 export class AttorneyComponent implements OnInit {
   expertData
-  constructor(private userService: UsersService,private globalService: GlobalService) { }
+  constructor(private userService: UsersService,public globalService: GlobalService) { }
 
   ngOnInit(): void {
     this.userService.getUsers().subscribe(e => {

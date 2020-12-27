@@ -9,17 +9,17 @@ import { ServiceService } from 'src/app/shared/service/service/service.service';
 })
 export class ServicesComponent implements OnInit {
   serviceData = []
-  constructor(private service: ServiceService,private globalService: GlobalService) { }
+  constructor(private service: ServiceService,public globalService: GlobalService) { }
 
   ngOnInit(): void {
     this.service.getService().subscribe(e => {
+      e['result'] = e['result'].reverse()
       if(e['result'])
         for(let i = 0; i < e['result'].length; i++){
           this.serviceData.push(e['result'][i])
           if(i == 3)
             break
         }
-      console.log(this.serviceData)
     })  
   }
 

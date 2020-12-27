@@ -12,7 +12,7 @@ export class AboutUsService {
 
   constructor(
     private http: HttpClient,
-    private globalService: GlobalService
+    public globalService: GlobalService
   ) { }
   getAboutUs(){
     return  this.http.get(`${this.globalService.url}/about-us-data`)

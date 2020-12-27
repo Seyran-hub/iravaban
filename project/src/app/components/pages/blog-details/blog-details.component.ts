@@ -9,7 +9,7 @@ import { GlobalService } from 'src/app/shared/service/global/global.service';
 })
 export class BlogDetailsComponent implements OnInit {
   serviceData
-  constructor(private route: Router,private globalService: GlobalService) { }
+  constructor(private route: Router,public globalService: GlobalService) { }
 
   ngOnInit(): void {
     if(!JSON.parse(localStorage.getItem('service')))

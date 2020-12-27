@@ -1,0 +1,13 @@
+.navbar-light .navbar-brand img{
+    width: 59px;
+}
+
+.navbar-expand-md{
+    padding: 0;
+}
+
+@media only screen and (max-width: 991px) {
+    .mobile-nav .logo{
+        width: 35px;
+    }
+}
