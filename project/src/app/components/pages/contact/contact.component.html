@@ -2,7 +2,7 @@
     <div class="d-table">
         <div class="d-table-cell">
             <div class="page-title-text">
-                <h2>Contact Us</h2>
+                <h2>Contacts</h2>
             </div>
         </div>
     </div>
@@ -58,7 +58,7 @@
                         <div class="location-icon">
                             <i><img src="/assets/img/icon/calendar.svg" alt=""></i>
                         </div>
-                        <h3>Date</h3>
+                        <h3>Working days</h3>
                         <ul>
                             <li>{{contactData['date' + globalService.leng]}}</li>
                         </ul>
@@ -70,7 +70,7 @@
                             <i><img src="/assets/img/icon/clock.svg" alt=""></i>
                         </div>
 
-                        <h3>Time</h3>
+                        <h3>Working hours</h3>
 
                         <ul>
                             <li>{{contactData['time']}}</li>
@@ -84,7 +84,7 @@
                         <div class="location-icon">
                             <i><img src="/assets/img/icon/global.svg" alt=""></i>
                         </div>
-                        <h3>Language</h3>
+                        <h3>Languages</h3>
                         <ul>
                             <li>{{contactData['lang' + globalService.leng]}}</li>
                         </ul>
@@ -146,7 +146,7 @@
 
                 <div class="col-md-12 col-lg-12">
                     <div class="text-center">
-                        <button class="contact-btn" (click)="send()">Submit Case</button><img *ngIf="success" class="pl-2" src="/assets/img/icon/checked.svg" alt="">
+                        <button class="contact-btn" (click)="send()">Submit</button><img *ngIf="success" class="pl-2" src="/assets/img/icon/checked.svg" alt="">
                     </div>
                 </div>
             </div>

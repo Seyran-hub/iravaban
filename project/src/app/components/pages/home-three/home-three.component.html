@@ -9,7 +9,7 @@
                                 <div class="slider-text">
                                     <h1>{{e['title' + globalService.leng]}}</h1>
                                     <p *ngIf="e.service">
-                                        <a (click)="getService(e.service)" routerLink="/service-details">Go to service <i class="icofont-arrow-right"></i></a>
+                                        <a (click)="getService(e.service)" routerLink="/service-details">Go to services <i class="icofont-arrow-right"></i></a>
                                     </p>
                                 </div>
                             </div>
@@ -27,6 +27,6 @@
     </div>
 </div>
 
-<app-experts></app-experts>
+<!-- <app-experts></app-experts> -->
 
 <app-services></app-services>

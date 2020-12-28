@@ -14,7 +14,7 @@
             <div class="row contact-wrap">
                 <div class="col-sm-12 text-center">
                         <input type="file" id="file"  (change)="handleFileInput($event.target.files)"/>
-                        <label for="file" [class]="submitted && f.file.status == 'INVALID' ? 'text_err btn1':' btn1'">upload image</label>
+                        <label for="file" [class]="submitted && f.file.status == 'INVALID' ? 'text_err btn1':' btn1'">Upload image</label>
                         <span *ngIf="imgName" class="pl-2">{{imgName}}</span>
                 </div>
                 <div class="col-sm-6 col-lg-6">
@@ -89,7 +89,7 @@
 
                 <div class="col-md-12 col-lg-12">
                     <div class="text-center">
-                        <button class="contact-btn" (click)="send()">Submit Case</button><img *ngIf="success"
+                        <button class="contact-btn" (click)="send()">Submit</button><img *ngIf="success"
                             class="pl-2" src="/assets/img/icon/checked.svg" alt="">
                     </div>
                 </div>

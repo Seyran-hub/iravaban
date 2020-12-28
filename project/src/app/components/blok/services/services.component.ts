@@ -17,7 +17,7 @@ export class ServicesComponent implements OnInit {
       if(e['result'])
         for(let i = 0; i < e['result'].length; i++){
           this.serviceData.push(e['result'][i])
-          if(i == 3)
+          if(i == 0)
             break
         }
     })  
