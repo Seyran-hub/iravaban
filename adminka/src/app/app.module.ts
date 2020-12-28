@@ -15,6 +15,7 @@ import { ContentPipe } from './shared/pipe/content.pipe';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { UsersComponent } from './pages/users/users.component';
+import { CvComponent } from './pages/cv/cv.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { UsersComponent } from './pages/users/users.component';
     AboutUsComponent,
     ContactUsComponent,
     UsersComponent,
+    CvComponent,
   ],
   imports: [
     BrowserModule,

@@ -15,9 +15,9 @@ const storage = multer.diskStorage({
     },
     filename: function (req, file, cb) {
         if (req.method === 'POST') {
-            cb(null, new Date().getTime().toString() + file.originalname)
+            cb(null, new Date().getTime().toString())
         } else if (req.method === 'PUT') {
-            cb(null, new Date().getTime().toString() + file.originalname)
+            cb(null, new Date().getTime().toString())
         }
     }
 });

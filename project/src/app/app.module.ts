@@ -30,6 +30,7 @@ import { ExpertsComponent } from './components/blok/experts/experts.component';
 import { ServicesComponent } from './components/blok/services/services.component';
 import { AgmCoreModule } from '@agm/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CvComponent } from './components/pages/cv/cv.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     TermsConditionsComponent,
     ContactComponent,
     ExpertsComponent,
-    ServicesComponent
+    ServicesComponent,
+    CvComponent
   ],
   imports: [
     BrowserModule,

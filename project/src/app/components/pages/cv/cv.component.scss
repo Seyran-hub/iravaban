@@ -1,0 +1,54 @@
+.border_err{
+    border-color: red !important;
+}
+
+.text_err{
+  color: red !important;
+  border: 2px solid red !important;
+}
+
+.border_err::placeholder{
+    color: red !important
+}
+
+
+[type="file"] {
+    height: 0;
+    overflow: hidden;
+    width: 0;
+  }
+  
+  [type="file"] + label {
+    background: #bfa765;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Rubik', sans-serif;
+    font-size: inherit;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    outline: none;
+    padding: 1rem 50px;
+    position: relative;
+    transition: all 0.3s;
+    vertical-align: middle;
+    
+    &:hover {
+      background-color: darken(#b69d74, 10%);
+    }
+    
+    &.btn-1 {
+      background-color: #bfa765;
+      box-shadow: 0 6px darken(#b69d74, 10%);
+      transition: none;
+  
+      &:hover {
+        box-shadow: 0 4px darken(#b69d74 , 10%);
+        top: 2px;
+      }
+    }
+    
+  }
+  

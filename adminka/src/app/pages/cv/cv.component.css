@@ -1,0 +1,21 @@
+h2{
+    cursor: pointer;
+}
+
+.cv{
+    display: flex
+}
+
+.info{
+    margin-left: 12px;
+}
+
+.info_cv{
+    display: flex;
+    margin: 8px;
+}
+
+.title_cv{
+    font-weight: bold;
+    padding-right: 8px;
+}

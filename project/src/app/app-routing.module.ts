@@ -19,6 +19,7 @@ import { ErrorComponent } from './components/pages/error/error.component';
 import { PrivacyPolicyComponent } from './components/pages/privacy-policy/privacy-policy.component';
 import { TermsConditionsComponent } from './components/pages/terms-conditions/terms-conditions.component';
 import { ContactComponent } from './components/pages/contact/contact.component';
+import { CvComponent } from './components/pages/cv/cv.component';
 
 const routes: Routes = [
     {path: '', component: HomeThreeComponent},
@@ -27,6 +28,7 @@ const routes: Routes = [
     {path: 'attorney-details', component: AttorneyDetailsComponent},
     {path: 'case-study', component: CaseStudyComponent},
     {path: 'case-study-details', component: CaseStudyDetailsComponent},
+    {path: 'send-cv', component: CvComponent},
     {path: 'services', component: BlogComponent},
     {path: 'service-details', component: BlogDetailsComponent},
     {path: 'practice', component: PracticeComponent},

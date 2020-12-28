@@ -1,0 +1,99 @@
+<div class="page-title-area title-img-one">
+    <div class="d-table">
+        <div class="d-table-cell">
+            <div class="page-title-text">
+                <h2>CV</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="contact-form contact-form-four pb-100 pt-100">
+    <div class="container-fluid">
+        <form id="contactForm" [formGroup]="angularForm" novalidate>
+            <div class="row contact-wrap">
+                <div class="col-sm-12 text-center">
+                        <input type="file" id="file"  (change)="handleFileInput($event.target.files)"/>
+                        <label for="file" [class]="submitted && f.file.status == 'INVALID' ? 'text_err btn1':' btn1'">upload image</label>
+                        <span *ngIf="imgName" class="pl-2">{{imgName}}</span>
+                </div>
+                <div class="col-sm-6 col-lg-6">
+                    <div class="form-group">
+                        <input type="text" name="name" id="name" placeholder="Your Name"
+                            [class]="submitted && f.name.status == 'INVALID' ? 'border_err form-control':'form-control'"
+                            formControlName="name">
+                    </div>
+                </div>
+
+                
+                <div class="col-sm-6 col-lg-6">
+                    <div class="form-group">
+                        <input type="text" name="msg_subject" id="msg_subject" placeholder="Your Surname"
+                            [class]="submitted && f.surname.status == 'INVALID' ? 'border_err form-control':'form-control'"
+                            formControlName="surname">
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-6">
+                    <div class="form-group">
+                        <input type="email" name="email" id="email" placeholder="Your Email"
+                            [class]="submitted && f.email.status == 'INVALID' ? 'border_err form-control':'form-control'"
+                            formControlName="email">
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-6">
+                    <div class="form-group">
+                        <input type="text" name="phone_number" id="phone_number" placeholder="Your Phone"
+                            [class]="submitted && f.phone.status == 'INVALID' ? 'border_err form-control':'form-control'"
+                            formControlName="phone">
+                    </div>
+                </div>
+
+                <div class="col-md-12 col-lg-12">
+                    <div class="form-group">
+                        <textarea name="message" class="form-control" id="message" cols="30" rows="4"
+                            placeholder="Education"
+                            [class]="submitted && f.education.status == 'INVALID' ? 'border_err form-control':'form-control'"
+                            formControlName="education"></textarea>
+                    </div>
+                </div>
+
+                <div class="col-md-12 col-lg-12">
+                    <div class="form-group">
+                        <textarea name="message" class="form-control" id="message" cols="30" rows="4"
+                            placeholder="Experience"
+                            [class]="submitted && f.experience.status == 'INVALID' ? 'border_err form-control':'form-control'"
+                            formControlName="experience"></textarea>
+                    </div>
+                </div>
+
+                <div class="col-md-12 col-lg-12">
+                    <div class="form-group">
+                        <textarea name="message" class="form-control" id="message" cols="30" rows="4"
+                            placeholder="Languages"
+                            [class]="submitted && f.languages.status == 'INVALID' ? 'border_err form-control':'form-control'"
+                            formControlName="languages"></textarea>
+                    </div>
+                </div>
+
+
+                <div class="col-md-12 col-lg-12">
+                    <div class="form-group">
+                        <textarea name="message" class="form-control" id="message" cols="30" rows="4"
+                            placeholder="Computer Skills"
+                            [class]="submitted && f.computer_skills.status == 'INVALID' ? 'border_err form-control':'form-control'"
+                            formControlName="computer_skills"></textarea>
+                    </div>
+                </div>
+
+                <div class="col-md-12 col-lg-12">
+                    <div class="text-center">
+                        <button class="contact-btn" (click)="send()">Submit Case</button><img *ngIf="success"
+                            class="pl-2" src="/assets/img/icon/checked.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
