@@ -8,6 +8,7 @@ import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { UsersComponent } from './pages/users/users.component';
 import { CvComponent } from './pages/cv/cv.component';
+import { BlogComponent } from './pages/blog/blog.component';
 
 
 const routes: Routes = [
@@ -45,6 +46,11 @@ const routes: Routes = [
   {
     path: 'cv',
     component: CvComponent,
+    canActivate: [LoginGuard]
+  },
+  {
+    path: 'blog',
+    component: BlogComponent,
     canActivate: [LoginGuard]
   },
   { path: 'login', component: LoginComponent}

@@ -16,6 +16,7 @@ import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { UsersComponent } from './pages/users/users.component';
 import { CvComponent } from './pages/cv/cv.component';
+import { BlogComponent } from './pages/blog/blog.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { CvComponent } from './pages/cv/cv.component';
     ContactUsComponent,
     UsersComponent,
     CvComponent,
+    BlogComponent,
   ],
   imports: [
     BrowserModule,

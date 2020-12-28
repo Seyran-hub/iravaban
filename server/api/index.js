@@ -8,6 +8,7 @@ const contact_us = require("./contact_us")
 const emaile = require("./email")
 const user = require("./user")
 const cv = require("./cv")
+const blog = require("./blog")
 
 api.use(login);
 api.use(slider);
@@ -17,6 +18,7 @@ api.use(contact_us);
 api.use(emaile);
 api.use(user);
 api.use(cv);
+api.use(blog);
 
 
 module.exports = api;
