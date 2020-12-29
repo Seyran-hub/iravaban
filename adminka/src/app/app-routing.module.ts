@@ -39,7 +39,7 @@ const routes: Routes = [
     canActivate: [LoginGuard]
   },
   {
-    path: 'users',
+    path: 'lawyers',
     component: UsersComponent,
     canActivate: [LoginGuard]
   },
@@ -49,7 +49,7 @@ const routes: Routes = [
     canActivate: [LoginGuard]
   },
   {
-    path: 'blog',
+    path: 'cases',
     component: BlogComponent,
     canActivate: [LoginGuard]
   },

@@ -28,6 +28,7 @@ export class CvComponent implements OnInit {
       experience: ['', Validators.compose([Validators.required])],
       languages: ['', Validators.compose([Validators.required])],
       computer_skills: ['', Validators.compose([Validators.required])],
+      info: ['', Validators.compose([Validators.required])],
       file: ["", Validators.required]
     });
    }
@@ -60,6 +61,7 @@ export class CvComponent implements OnInit {
       formData.append('experience', this.angularForm.value.experience);
       formData.append('languages', this.angularForm.value.languages);
       formData.append('computer_skills', this.angularForm.value.computer_skills);
+      formData.append('info', this.angularForm.value.info);
       formData.append('email', this.angularForm.value.email);
       this.cvService.sendCv(formData).subscribe(e => {
         this.submitted = false;
@@ -75,6 +77,7 @@ export class CvComponent implements OnInit {
         this.angularForm.get('experience').setValue('')
         this.angularForm.get('languages').setValue('')
         this.angularForm.get('computer_skills').setValue('')
+        this.angularForm.get('info').setValue('')
         this.angularForm.get('email').setValue('')
       })
     }

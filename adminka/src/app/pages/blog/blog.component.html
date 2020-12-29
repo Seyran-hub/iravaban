@@ -4,7 +4,7 @@
             <img src="/assets/icons/cancel.png" alt="" width="20px">
         </div>
         <form class="add_slider" [formGroup]="updateForm" novalidate>
-            <h2>Update Blog</h2>
+            <h2>Update Our cases</h2>
             <div class="inp_block">
                 <div class="input_style"><input type="text" formControlName="title_am" placeholder="Title AM*">
                 </div>
@@ -40,9 +40,9 @@
 <div class="container_fm">
     <app-sidebar></app-sidebar>
     <div class="pages_blog">
-        <h1>Blog Page</h1>
+        <h1>Our cases Page</h1>
         <form class="add_slider" [formGroup]="angularForm" novalidate>
-            <h2>Add Blog</h2>
+            <h2>Add Our cases</h2>
             <div>
                 <input type="file" id="file" (change)="handleFileInput($event.target.files)" />
             </div>
@@ -77,7 +77,7 @@
             <button class="send_butt" [disabled]="!angularForm.valid" (click)="sendData()">SEND</button>
         </form>
         <div class="slider_list" *ngIf="angularData && angularData.length">
-            <h2 (click)="listCheck = !listCheck">Blog List</h2>
+            <h2 (click)="listCheck = !listCheck">Our cases List</h2>
             <table *ngIf="listCheck">
                 <tr>
                     <th>Title AM</th>

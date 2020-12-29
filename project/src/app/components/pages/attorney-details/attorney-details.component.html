@@ -2,7 +2,7 @@
     <div class="d-table">
         <div class="d-table-cell">
             <div class="page-title-text">
-                <h2>Attorney</h2>
+                <h2>Lawyer</h2>
             </div>
         </div>
     </div>
@@ -45,6 +45,8 @@
                         <div class="attor-details-name">
                             <h2>{{expertData['name' + globalService.leng] + ' ' + expertData['surname' +
                                 globalService.leng]}}</h2>
+                             <span>{{expertData['position' + globalService.leng]}}</span>
+
                         </div>
 
                         <div class="attor-details-things" [innerHTML]="expertData['content' + globalService.leng]">

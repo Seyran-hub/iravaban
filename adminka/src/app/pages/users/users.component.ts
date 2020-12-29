@@ -50,6 +50,10 @@ export class UsersComponent implements OnInit {
       content_en: ["", Validators.required],
       content_ru: ["", Validators.required],
       content_fr: ["", Validators.required],
+      position_am: ["", Validators.required],
+      position_en: ["", Validators.required],
+      position_ru: ["", Validators.required],
+      position_fr: ["", Validators.required],
       email: ["", Validators.required],
       id: ["", Validators.required],
     });
@@ -71,6 +75,10 @@ export class UsersComponent implements OnInit {
       content_en: ["", Validators.required],
       content_ru: ["", Validators.required],
       content_fr: ["", Validators.required],
+      position_am: ["", Validators.required],
+      position_en: ["", Validators.required],
+      position_ru: ["", Validators.required],
+      position_fr: ["", Validators.required],
       email: ["", Validators.required],
       file: ["", Validators.required]
     });
@@ -85,6 +93,7 @@ export class UsersComponent implements OnInit {
   }
 
   sendData() {
+    console.log(this.angularForm.value)
     const formData = new FormData();
     formData.append('file', this.fileToUpload, this.fileToUpload.name);
     formData.append('fileName', this.fileToUpload.name);
@@ -105,6 +114,10 @@ export class UsersComponent implements OnInit {
     formData.append('content_en', this.angularForm.value.content_en);
     formData.append('content_ru', this.angularForm.value.content_ru);
     formData.append('content_fr', this.angularForm.value.content_fr);
+    formData.append('position_am', this.angularForm.value.position_am);
+    formData.append('position_en', this.angularForm.value.position_en);
+    formData.append('position_ru', this.angularForm.value.position_ru);
+    formData.append('position_fr', this.angularForm.value.position_fr);
     formData.append('email', this.angularForm.value.email);
     this.usersService.setUser(formData).subscribe(e => {
       this.angularForm.get('name_am').setValue('')
@@ -123,6 +136,10 @@ export class UsersComponent implements OnInit {
       this.angularForm.get('content_en').setValue('')
       this.angularForm.get('content_ru').setValue('')
       this.angularForm.get('content_fr').setValue('')
+      this.angularForm.get('position_am').setValue('')
+      this.angularForm.get('position_en').setValue('')
+      this.angularForm.get('position_ru').setValue('')
+      this.angularForm.get('position_fr').setValue('')
       this.angularForm.get('email').setValue('')
       this.usersService.getUsers().subscribe(el => {
         this.angularData = el['result']
@@ -160,6 +177,10 @@ export class UsersComponent implements OnInit {
     this.updateForm.get('content_en').setValue(data.content_en)
     this.updateForm.get('content_ru').setValue(data.content_ru)
     this.updateForm.get('content_fr').setValue(data.content_fr)
+    this.updateForm.get('position_am').setValue(data.position_am)
+    this.updateForm.get('position_en').setValue(data.position_en)
+    this.updateForm.get('position_ru').setValue(data.position_ru)
+    this.updateForm.get('position_fr').setValue(data.position_fr)
     this.updateForm.get('email').setValue(data.email)
     this.updateForm.get('id').setValue(data.id)
     this.modal = !this.modal

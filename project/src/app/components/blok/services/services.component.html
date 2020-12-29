@@ -1,17 +1,17 @@
 
-<section class="blog-area">
+
+<section class="blog-area mt-5">
     <div class="container">
         <div class="section-title">
-            <h2>Residence status</h2>
+            <h2>Main services</h2>
         </div>
     </div>
 </section>
 
-
 <section class="blog-area blog-area-two"  *ngIf="serviceData.length">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12" *ngFor="let e of serviceData">
+            <div class="col-sm-6 col-lg-3 mb-3" *ngFor="let e of serviceData">
                 <div class="blog-item wow fadeInUp" data-wow-delay=".3s">
                     <a (click)="navigate(e)" routerLink="/service-details">
                         <img [src]="e.img_url" alt="Service">
@@ -20,6 +20,34 @@
                     <div class="blog-inner">
                         <h3><a>{{e['title' + globalService.leng]}}</a></h3>
                         <a class="blog-link" (click)="navigate(e)" routerLink="/service-details">Read More<i class="icofont-simple-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="blog-area mt-3">
+    <div class="container">
+        <div class="section-title">
+            <h3>Residence status</h3>
+        </div>
+    </div>
+</section>
+
+<section class="blog-area blog-area-two"  *ngIf="serviceById">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="blog-item wow fadeInUp" data-wow-delay=".3s">
+                    <a (click)="navigate(serviceById)" routerLink="/service-details">
+                        <img [src]="serviceById.img_url" alt="Service">
+                    </a>
+
+                    <div class="blog-inner">
+                        <h3><a>{{serviceById['title' + globalService.leng]}}</a></h3>
+                        <a class="blog-link" (click)="navigate(serviceById)" routerLink="/service-details">Read More<i class="icofont-simple-right"></i></a>
                     </div>
                 </div>
             </div>

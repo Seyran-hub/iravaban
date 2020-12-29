@@ -4,7 +4,7 @@
             <img src="/assets/icons/cancel.png" alt="" width="20px">
         </div>
         <form class="add_slider" [formGroup]="updateForm" novalidate>
-            <h2>Update Experts</h2>
+            <h2>Update Lawyers</h2>
             <div class="inp_block">
                 <div class="input_style"><input type="text" formControlName="name_am" placeholder="Name AM*">
                 </div>
@@ -28,6 +28,18 @@
                 <div class="input_style"><input type="text" formControlName="surname_ru" placeholder="Surname RU*">
                 </div>
                 <div class="input_style"><input type="text" formControlName="surname_fr" placeholder="Surname FR*">
+                </div>
+            </div>
+            <div class="inp_block">
+                <div class="input_style"><input type="text" formControlName="position_am" placeholder="Position AM*">
+                </div>
+                <div class="input_style"><input type="text" formControlName="position_en" placeholder="Position EN*">
+                </div>
+            </div>
+            <div class="inp_block">
+                <div class="input_style"><input type="text" formControlName="position_ru" placeholder="Position RU*">
+                </div>
+                <div class="input_style"><input type="text" formControlName="position_fr" placeholder="Position FR*">
                 </div>
             </div>
             <div class="inp_block">
@@ -69,9 +81,9 @@
 <div class="container_fm">
     <app-sidebar></app-sidebar>
     <div class="pages_blog">
-        <h1>Experts Page</h1>
+        <h1>Lawyers Page</h1>
         <form class="add_slider" [formGroup]="angularForm" novalidate>
-            <h2>Add Experts</h2>
+            <h2>Add Lawyers</h2>
             <div>
                 <input type="file" id="file" (change)="handleFileInput($event.target.files)" />
             </div>
@@ -97,6 +109,18 @@
                 <div class="input_style"><input type="text" formControlName="surname_ru" placeholder="Surname RU*">
                 </div>
                 <div class="input_style"><input type="text" formControlName="surname_fr" placeholder="Surname FR*">
+                </div>
+            </div>
+            <div class="inp_block">
+                <div class="input_style"><input type="text" formControlName="position_am" placeholder="Position AM*">
+                </div>
+                <div class="input_style"><input type="text" formControlName="position_en" placeholder="Position EN*">
+                </div>
+            </div>
+            <div class="inp_block">
+                <div class="input_style"><input type="text" formControlName="position_ru" placeholder="Position RU*">
+                </div>
+                <div class="input_style"><input type="text" formControlName="position_fr" placeholder="Position FR*">
                 </div>
             </div>
             <div class="inp_block">
@@ -135,7 +159,7 @@
             <button class="send_butt" [disabled]="!angularForm.valid" (click)="sendData()">SEND</button>
         </form>
         <div class="slider_list" *ngIf="angularData && angularData.length">
-            <h2 (click)="listCheck = !listCheck">Expert List</h2>
+            <h2 (click)="listCheck = !listCheck">Lawyers List</h2>
             <table *ngIf="listCheck">
                 <tr>
                     <th>Name EN</th>

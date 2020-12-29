@@ -1,9 +1,5 @@
 <section class="team-area mt-5" *ngIf='expertData'>
     <div class="container">
-        <div class="section-title">
-            <h2>OUR LAWYERS</h2>
-        </div>
-
         <div class="row">
             <div class="col-sm-6 col-lg-3" *ngFor="let e of expertData">
                 <div class="team-item">
@@ -24,6 +20,7 @@
                                 {{e['surname' + globalService.leng]}}
                             </p>
                         </a></h3>
+                        <span>{{e['position' + globalService.leng]}}</span>
                     </div>
                 </div>
             </div>
