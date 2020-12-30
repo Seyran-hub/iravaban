@@ -2541,6 +2541,21 @@ footer {
         }
     }
 }
+
+.nice-select{font-weight: 500;
+    font-size: 16px !important;
+    text-transform: uppercase !important;
+    color: #ffffff !important;
+    background-color: transparent !important;
+
+    .list{
+        background-color: #333333 !important;
+        li{
+            background-color: #333333 !important;
+        }
+    }
+
+}
 /*-- End Case Details Tab --*/
 
 /*-- Portfolio --*/
