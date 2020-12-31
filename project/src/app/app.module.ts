@@ -29,9 +29,14 @@ import { ContactComponent } from './components/pages/contact/contact.component';
 import { ExpertsComponent } from './components/blok/experts/experts.component';
 import { ServicesComponent } from './components/blok/services/services.component';
 import { AgmCoreModule } from '@agm/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CvComponent } from './components/pages/cv/cv.component';
+import {TranslateModule, TranslateLoader, TranslatePipe} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -66,6 +71,14 @@ import { CvComponent } from './components/pages/cv/cv.component';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    FormsModule ,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (HttpLoaderFactory),
+        deps: [HttpClient]
+      }
+    }),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBrZcAFat6HPoli5mZVKJ397CBpk8IJvj0'
     })

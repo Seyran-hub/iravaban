@@ -13,6 +13,7 @@ export class GlobalService {
   constructor(
     private http: HttpClient,
   ) {
+      
     this.getSlider().subscribe(e => {
       if(e['result'].length){
         this.sliderData = e['result']
