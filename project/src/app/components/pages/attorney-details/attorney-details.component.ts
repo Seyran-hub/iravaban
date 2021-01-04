@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { ContactUsService } from 'src/app/shared/service/contactUs/contact-us.service';
 import { GlobalService } from 'src/app/shared/service/global/global.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-attorney-details',
@@ -18,6 +19,7 @@ export class AttorneyDetailsComponent implements OnInit {
     private contactService: ContactUsService,
     public globalService: GlobalService,
     public formBuilder: FormBuilder,
+    public translate: TranslateService
     ) {
     let EMAIL_REGEXP = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
 
@@ -34,7 +36,6 @@ export class AttorneyDetailsComponent implements OnInit {
     if(!JSON.parse(localStorage.getItem('expert')))
       this.route.navigate(['/home-three'])
     this.expertData = JSON.parse(localStorage.getItem('expert'))
-    console.log(this.expertData)
   }
 
   get f() { return this.contactForm.controls; }

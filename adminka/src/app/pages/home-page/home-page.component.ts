@@ -26,7 +26,6 @@ export class HomePageComponent implements OnInit {
   ) {
     this.serviceService.getService().subscribe(e => this.serviceData = e['result'])
     this.homeService.getSlider().subscribe(e => {
-      console.log(e)
       this.sliderData = e['result']
     })
 

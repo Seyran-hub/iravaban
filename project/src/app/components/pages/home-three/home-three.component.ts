@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { GlobalService } from 'src/app/shared/service/global/global.service';
 
 @Component({
@@ -9,6 +10,7 @@ import { GlobalService } from 'src/app/shared/service/global/global.service';
 export class HomeThreeComponent implements OnInit {
   constructor(
     public globalService: GlobalService,
+    public translate: TranslateService
     ) { 
     }
 

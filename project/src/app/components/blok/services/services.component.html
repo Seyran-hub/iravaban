@@ -3,7 +3,7 @@
 <section class="blog-area mt-5">
     <div class="container">
         <div class="section-title">
-            <h2>Main services</h2>
+            <h2>{{'Main services' | translate}}</h2>
         </div>
     </div>
 </section>
@@ -19,7 +19,7 @@
 
                     <div class="blog-inner">
                         <h3><a>{{e['title' + globalService.leng]}}</a></h3>
-                        <a class="blog-link" (click)="navigate(e)" routerLink="/service-details">Read More<i class="icofont-simple-right"></i></a>
+                        <a class="blog-link" (click)="navigate(e)" routerLink="/service-details">{{'Read More' | translate}}<i class="icofont-simple-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -31,7 +31,7 @@
 <section class="blog-area mt-3">
     <div class="container">
         <div class="section-title">
-            <h3>Residence status</h3>
+            <h3>{{'Residence status' | translate}}</h3>
         </div>
     </div>
 </section>
@@ -47,7 +47,7 @@
 
                     <div class="blog-inner">
                         <h3><a>{{serviceById['title' + globalService.leng]}}</a></h3>
-                        <a class="blog-link" (click)="navigate(serviceById)" routerLink="/service-details">Read More<i class="icofont-simple-right"></i></a>
+                        <a class="blog-link" (click)="navigate(serviceById)" routerLink="/service-details">{{'Read More' | translate}}<i class="icofont-simple-right"></i></a>
                     </div>
                 </div>
             </div>

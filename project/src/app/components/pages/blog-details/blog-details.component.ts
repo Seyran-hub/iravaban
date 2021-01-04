@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 import { GlobalService } from 'src/app/shared/service/global/global.service';
 
 @Component({
@@ -9,13 +10,13 @@ import { GlobalService } from 'src/app/shared/service/global/global.service';
 })
 export class BlogDetailsComponent implements OnInit {
   serviceData
-  constructor(private route: Router,public globalService: GlobalService) { }
+  constructor(private route: Router,public globalService: GlobalService,
+    public translate: TranslateService) { }
 
   ngOnInit(): void {
     if(!JSON.parse(localStorage.getItem('service')))
     this.route.navigate(['/home-three'])
   this.serviceData = JSON.parse(localStorage.getItem('service'))
-  console.log(this.serviceData)
   }
 
 }

@@ -5,6 +5,7 @@ import { filter } from 'rxjs/operators';
 import { ContactUsService } from './shared/service/contactUs/contact-us.service';
 import { GlobalService } from './shared/service/global/global.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { TranslateService } from '@ngx-translate/core';
 
 declare let $: any;
 
@@ -33,7 +34,8 @@ export class AppComponent implements OnInit {
     constructor(private router: Router,
         private contactService: ContactUsService,
     public globalService: GlobalService,
-    public formBuilder: FormBuilder) {
+    public formBuilder: FormBuilder,
+    public translate: TranslateService) {
         let EMAIL_REGEXP = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
 
       this.contactForm = formBuilder.group({

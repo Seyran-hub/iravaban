@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { ContactUsService } from 'src/app/shared/service/contactUs/contact-us.service';
 import { GlobalService } from 'src/app/shared/service/global/global.service';
 
@@ -11,7 +12,7 @@ export class FooterComponent implements OnInit {
   contactData
   phone
   email
-  constructor(private contactService: ContactUsService,public globalService: GlobalService) { }
+  constructor(private contactService: ContactUsService,public globalService: GlobalService,public translate: TranslateService) { }
 
   ngOnInit(): void {
     this.contactService.getContactUs().subscribe(e => {

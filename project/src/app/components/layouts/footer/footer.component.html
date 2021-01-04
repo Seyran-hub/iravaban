@@ -22,15 +22,15 @@
             <div class="col-sm-6 col-lg-4">
                 <div class="footer-item">
                     <div class="footer-service">
-                        <h3>Quick Links</h3>
+                        <h3>{{'Quick Links' | translate}}</h3>
                         <ul>
-                            <li><a routerLink="/"><i class="icofont-simple-right"></i> Home</a></li>
-                            <li><a routerLink="about"><i class="icofont-simple-right"></i> About Us</a></li>
-                            <li><a routerLink="services"><i class="icofont-simple-right"></i> Services</a></li>
-                            <li><a routerLink="attorney"><i class="icofont-simple-right"></i> Lawyers</a></li>
-                            <li><a routerLink="send-cv"><i class="icofont-simple-right"></i> CV</a></li>
-                            <li><a routerLink="case-study"><i class="icofont-simple-right"></i>Our cases</a></li>
-                            <li><a routerLink="contact"><i class="icofont-simple-right"></i> Contacts</a></li>
+                            <li><a routerLink="/"><i class="icofont-simple-right"></i> {{'Home' | translate}}</a></li>
+                            <li><a routerLink="about"><i class="icofont-simple-right"></i> {{'About Us' | translate}}</a></li>
+                            <li><a routerLink="attorney"><i class="icofont-simple-right"></i> {{'Lawyers' | translate}}</a></li>
+                            <li><a routerLink="services"><i class="icofont-simple-right"></i> {{'Services' | translate}}</a></li>
+                            <li><a routerLink="send-cv"><i class="icofont-simple-right"></i> {{'CV' | translate}}</a></li>
+                            <li><a routerLink="case-study"><i class="icofont-simple-right"></i>{{'Our cases' | translate}}</a></li>
+                            <li><a routerLink="contact"><i class="icofont-simple-right"></i> {{'Contacts' | translate}}</a></li>
                         </ul>
                     </div>
                 </div>
@@ -39,7 +39,7 @@
             <div class="col-sm-6 col-lg-4">
                 <div class="footer-item">
                     <div class="footer-find">
-                        <h3>Contacts</h3>
+                        <h3>{{'Contacts' | translate}}</h3>
 
                         <ul *ngIf="contactData">
                             <li><i class="icofont-location-pin"></i>{{contactData['address' + globalService.leng]}}</li>

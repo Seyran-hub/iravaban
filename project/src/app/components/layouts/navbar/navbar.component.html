@@ -19,41 +19,41 @@
                                 [routerLinkActiveOptions]="{exact: true}">{{'Home' | translate}}</a></li>
 
                         <li class="nav-item"><a routerLink="/about" class="nav-link" routerLinkActive="active"
-                                [routerLinkActiveOptions]="{exact: true}">About Us</a></li>
+                                [routerLinkActiveOptions]="{exact: true}">{{'About Us' | translate}}</a></li>
 
                         <li class="nav-item"><a routerLink="/attorney" class="nav-link" routerLinkActive="active"
-                                [routerLinkActiveOptions]="{exact: true}">Lawyers</a></li>
+                                [routerLinkActiveOptions]="{exact: true}">{{'Lawyers' | translate}}</a></li>
 
                         <li class="nav-item"><a routerLink="/services" class="nav-link" routerLinkActive="active"
-                                [routerLinkActiveOptions]="{exact: true}">Services</a></li>
+                                [routerLinkActiveOptions]="{exact: true}">{{'Services' | translate}}</a></li>
                         <li class="nav-item"><a routerLink="/send-cv" class="nav-link" routerLinkActive="active"
-                                [routerLinkActiveOptions]="{exact: true}">CV</a></li>
+                                [routerLinkActiveOptions]="{exact: true}">{{'CV' | translate}}</a></li>
                         <li class="nav-item"><a routerLink="/case-study" class="nav-link" routerLinkActive="active"
-                                [routerLinkActiveOptions]="{exact: true}">Our cases</a></li>
+                                [routerLinkActiveOptions]="{exact: true}">{{'Our cases' | translate}}</a></li>
                         <li class="nav-item"><a routerLink="/contact" class="nav-link" routerLinkActive="active"
-                                [routerLinkActiveOptions]="{exact: true}">Contacts</a></li>
+                                [routerLinkActiveOptions]="{exact: true}">{{'Contacts' | translate}}</a></li>
 
 
                         <li class="nav-item"><a>{{langCode}}</a>
                             <ul class="dropdown-menu">
                                 <li [ngClass]="lang =='_en'? 'nav-item active_fm': 'nav-item'" (click)="onChange('_en')">
                                     <a href="">
-                                        EN
+                                        {{'EN' | translate}}
                                     </a>
                                 </li>
                                 <li [ngClass]="lang == '_am'? 'nav-item active_fm': 'nav-item'" (click)="onChange('_am')">
                                     <a href="">
-                                        AM
+                                        {{'AM' | translate}}
                                     </a>
                                 </li>
                                 <li [ngClass]="lang=='_ru'? 'nav-item active_fm': 'nav-item'" (click)="onChange('_ru')">
                                     <a href="">
-                                        RU
+                                        {{'RU' | translate}}
                                     </a>
                                 </li>
                                 <li [ngClass]="lang=='_fr'? 'nav-item active_fm': 'nav-item'" (click)="onChange('_fr')">
                                     <a href="">
-                                        FR
+                                        {{'FR' | translate}}
                                     </a>
                                 </li>
                             </ul>

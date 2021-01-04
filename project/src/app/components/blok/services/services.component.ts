@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { GlobalService } from 'src/app/shared/service/global/global.service';
 import { ServiceService } from 'src/app/shared/service/service/service.service';
 
@@ -10,11 +11,10 @@ import { ServiceService } from 'src/app/shared/service/service/service.service';
 export class ServicesComponent implements OnInit {
   serviceData = []
   serviceById
-  constructor(private service: ServiceService,public globalService: GlobalService) { }
+  constructor(private service: ServiceService,public globalService: GlobalService,public translate: TranslateService) { }
 
   ngOnInit(): void {
     this.service.getServiceId({serviceId: 7}).subscribe(e => {
-      console.log(e)
       if(e['result'])
         this.serviceById = e['result'][0]
     })

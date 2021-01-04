@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { ignoreElements } from 'rxjs/operators';
 import { AboutUsService } from 'src/app/shared/service/aboutUs/about-us.service';
 import { GlobalService } from 'src/app/shared/service/global/global.service';
@@ -14,7 +15,8 @@ export class AboutComponent implements OnInit {
   content
   constructor(
     private AboutUsService: AboutUsService,
-    public globalService: GlobalService
+    public globalService: GlobalService,
+    public translate: TranslateService
   ) { }
 
   ngOnInit(): void {

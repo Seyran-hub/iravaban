@@ -17,7 +17,6 @@ export class CvComponent implements OnInit {
   constructor(public cvService: CvService, public globalService: GlobalService) { }
 
   view(e, type) {
-    console.log(e)
     this.viewCv = true
     this.data = e
     if (type == 1)

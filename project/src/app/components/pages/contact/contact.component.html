@@ -2,7 +2,7 @@
     <div class="d-table">
         <div class="d-table-cell">
             <div class="page-title-text">
-                <h2>Contacts</h2>
+                <h2>{{'Contacts' | translate}}</h2>
             </div>
         </div>
     </div>
@@ -18,7 +18,7 @@
                             <i class="flaticon-call"></i>
                         </div>
 
-                        <h3>Phone</h3>
+                        <h3>{{'Phone' | translate}}</h3>
 
                         <ul>
                             <li><a [href]="phone">{{contactData.phone}}</a></li>
@@ -32,7 +32,7 @@
                         <div class="location-icon">
                             <i class="flaticon-email"></i>
                         </div>
-                        <h3>Email</h3>
+                        <h3>{{'Email' | translate}}</h3>
                         <ul>
                             <li><a [href]="email">{{contactData.email}}</a></li>
                         </ul>
@@ -44,7 +44,7 @@
                             <i><img src="/assets/img/icon/home-address.svg" alt=""></i>
                         </div>
 
-                        <h3>Address</h3>
+                        <h3>{{'Address' | translate}}</h3>
 
                         <ul>
                             <li>{{contactData['address' + globalService.leng]}}</li>
@@ -58,7 +58,7 @@
                         <div class="location-icon">
                             <i><img src="/assets/img/icon/calendar.svg" alt=""></i>
                         </div>
-                        <h3>Working days</h3>
+                        <h3>{{'Working days' | translate}}</h3>
                         <ul>
                             <li>{{contactData['date' + globalService.leng]}}</li>
                         </ul>
@@ -70,7 +70,7 @@
                             <i><img src="/assets/img/icon/clock.svg" alt=""></i>
                         </div>
 
-                        <h3>Working hours</h3>
+                        <h3>{{'Working hours' | translate}}</h3>
 
                         <ul>
                             <li>{{contactData['time']}}</li>
@@ -84,7 +84,7 @@
                         <div class="location-icon">
                             <i><img src="/assets/img/icon/global.svg" alt=""></i>
                         </div>
-                        <h3>Languages</h3>
+                        <h3>{{'Languages' | translate}}</h3>
                         <ul>
                             <li>{{contactData['lang' + globalService.leng]}}</li>
                         </ul>
@@ -92,7 +92,7 @@
                 </div>
                 <div class="col-12">
                     <div class="location-item pl-3">
-                        <h3 class="text-center">Social</h3>
+                        <h3 class="text-center">{{'Social' | translate}}</h3>
                         <div class="attor-social">
                             <div class="social-icon">
                                 <a *ngIf="contactData.facebook" [href]="contactData.facebook" target="_blank"><i
@@ -116,37 +116,37 @@
             <div class="row contact-wrap">
                 <div class="col-sm-6 col-lg-6">
                     <div class="form-group">
-                        <input type="text" name="name" id="name" placeholder="Your Full Name" [class]="submitted && f.fullName.status == 'INVALID' ? 'border_err form-control':'form-control'" formControlName="fullName" >
+                        <input type="text" name="name" id="name" placeholder="{{'Your Full Name' | translate}}" [class]="submitted && f.fullName.status == 'INVALID' ? 'border_err form-control':'form-control'" formControlName="fullName" >
                     </div>
                 </div>
 
                 <div class="col-sm-6 col-lg-6">
                     <div class="form-group">
-                        <input type="email" name="email" id="email" placeholder="Your Email"  [class]="submitted && f.email.status == 'INVALID' ? 'border_err form-control':'form-control'" formControlName="email" >
+                        <input type="email" name="email" id="email" placeholder="{{'Your Email' | translate}}"  [class]="submitted && f.email.status == 'INVALID' ? 'border_err form-control':'form-control'" formControlName="email" >
                     </div>
                 </div>
 
                 <div class="col-sm-6 col-lg-6">
                     <div class="form-group">
-                        <input type="text" name="phone_number" id="phone_number" placeholder="Your Phone" [class]="submitted && f.phone.status == 'INVALID' ? 'border_err form-control':'form-control'" formControlName="phone" >
+                        <input type="text" name="phone_number" id="phone_number" placeholder="{{'Your Phone' | translate}}" [class]="submitted && f.phone.status == 'INVALID' ? 'border_err form-control':'form-control'" formControlName="phone" >
                     </div>
                 </div>
 
                 <div class="col-sm-6 col-lg-6">
                     <div class="form-group">
-                        <input type="text" name="msg_subject" id="msg_subject" placeholder="Subject" [class]="submitted && f.subject.status == 'INVALID' ? 'border_err form-control':'form-control'" formControlName="subject" >
+                        <input type="text" name="msg_subject" id="msg_subject" placeholder="{{'Subject' | translate}}" [class]="submitted && f.subject.status == 'INVALID' ? 'border_err form-control':'form-control'" formControlName="subject" >
                     </div>
                 </div>
 
                 <div class="col-md-12 col-lg-12">
                     <div class="form-group">
-                        <textarea name="message" class="form-control" id="message" cols="30" rows="8" placeholder="Case Description"  [class]="submitted && f.description.status == 'INVALID' ? 'border_err form-control':'form-control'" formControlName="description"></textarea>
+                        <textarea name="message" class="form-control" id="message" cols="30" rows="8" placeholder="{{'Case Description' | translate}}"  [class]="submitted && f.description.status == 'INVALID' ? 'border_err form-control':'form-control'" formControlName="description"></textarea>
                     </div>
                 </div>
 
                 <div class="col-md-12 col-lg-12">
                     <div class="text-center">
-                        <button class="contact-btn" (click)="send()">Submit</button><img *ngIf="success" class="pl-2" src="/assets/img/icon/checked.svg" alt="">
+                        <button class="contact-btn" (click)="send()">{{'Submit' | translate}}</button><img *ngIf="success" class="pl-2" src="/assets/img/icon/checked.svg" alt="">
                     </div>
                 </div>
             </div>

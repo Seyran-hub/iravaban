@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { TranslateService } from '@ngx-translate/core';
 import { CvService } from 'src/app/shared/service/cv/cv.service';
 
 @Component({
@@ -15,7 +16,8 @@ export class CvComponent implements OnInit {
   imgName
   constructor(
     public formBuilder: FormBuilder,
-    public cvService: CvService
+    public cvService: CvService,
+    public translate: TranslateService
   ) {
     let EMAIL_REGEXP = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
 
@@ -40,7 +42,6 @@ export class CvComponent implements OnInit {
     this.fileToUpload = files.item(0);
     this.imgName = this.fileToUpload.name
     this.angularForm.get('file').setValue('name')
-    console.log(files.item(0))
   }
 
 

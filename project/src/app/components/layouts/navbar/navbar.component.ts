@@ -40,7 +40,6 @@ export class NavbarComponent implements OnInit {
   }
 
   onChange(e){
-    console.log('sdsdsdsd')
     localStorage.setItem('language', JSON.stringify(e))
   }
 

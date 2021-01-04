@@ -67,7 +67,6 @@ export class ServiceComponent implements OnInit {
   }
 
   sendData() {
-    console.log(this.angularForm.value)
     const formData = new FormData();
     formData.append('file', this.fileToUpload, this.fileToUpload.name);
     formData.append('fileName', this.fileToUpload.name);
@@ -91,7 +90,6 @@ export class ServiceComponent implements OnInit {
       this.angularForm.get('content_fr').setValue('')
       this.serviceService.getService().subscribe(el => {
         this.angularData = el['result']
-        console.log(el)
       })
     })
   }
@@ -130,7 +128,6 @@ export class ServiceComponent implements OnInit {
         this.angularData = el['result']
         this.modal = !this.modal
       })
-      console.log(e)
     })
   }
 

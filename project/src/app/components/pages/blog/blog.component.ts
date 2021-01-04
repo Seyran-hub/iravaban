@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { GlobalService } from 'src/app/shared/service/global/global.service';
 import { ServiceService } from 'src/app/shared/service/service/service.service';
 
@@ -9,7 +10,8 @@ import { ServiceService } from 'src/app/shared/service/service/service.service';
 })
 export class BlogComponent implements OnInit {
   serviceData
-  constructor(private service: ServiceService,public globalService: GlobalService) { }
+  constructor(private service: ServiceService,public globalService: GlobalService,
+    public translate: TranslateService) { }
 
   ngOnInit(): void {
     this.service.getService().subscribe(e => {

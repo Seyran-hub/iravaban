@@ -59,7 +59,6 @@ export class AboutUsComponent implements OnInit {
   }
 
   sendData() {
-    console.log(this.angularForm.value)
     const formData = new FormData();
     formData.append('file', this.fileToUpload, this.fileToUpload.name);
     formData.append('fileName', this.fileToUpload.name);
@@ -75,7 +74,6 @@ export class AboutUsComponent implements OnInit {
       this.angularForm.get('content_fr').setValue('')
       this.aboutUsService.getAboutUs().subscribe(el => {
         this.angularData = el['result']
-        console.log(el)
       })
     })
   }

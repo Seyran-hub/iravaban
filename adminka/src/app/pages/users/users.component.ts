@@ -93,7 +93,6 @@ export class UsersComponent implements OnInit {
   }
 
   sendData() {
-    console.log(this.angularForm.value)
     const formData = new FormData();
     formData.append('file', this.fileToUpload, this.fileToUpload.name);
     formData.append('fileName', this.fileToUpload.name);
