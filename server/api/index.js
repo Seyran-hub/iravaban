@@ -20,5 +20,7 @@ api.use(user);
 api.use(cv);
 api.use(blog);
 
+api.get('*', (req,res) => res.status(404).json({}).end());
+
 
 module.exports = api;

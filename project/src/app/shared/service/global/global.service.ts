@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient  } from '@angular/common/http'; 
 import { catchError } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
 export class GlobalService {
-  url = 'http://localhost:3000'
+  url = environment.apiUrl
   token 
   leng = '_am'
   sliderData

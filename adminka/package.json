@@ -21,6 +21,8 @@
     "@angular/router": "~10.2.0",
     "@kolkov/angular-editor": "^1.1.4",
     "angular-reactive-form": "^1.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
     "react-reactive-form": "^1.0.32",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
