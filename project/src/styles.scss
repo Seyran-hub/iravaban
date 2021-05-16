@@ -976,7 +976,7 @@ button {
     top: -100px;
 }
 .location-bg {
-    background-image: url('assets/img/home-one/location-bg.jpg');
+    background: #434343;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;    
@@ -1941,8 +1941,19 @@ footer {
 }
 .title-img-one {
     background-image: url('assets/img/bg.jpg');
-    min-height: 300px;
+    min-height: 400px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: 0 -113px;
 }
+
+@media only screen and (max-width: 768px) {
+    .title-img-one {
+        min-height: auto;
+    }
+
+}
+
 .page-title-area {
     position: relative;
     margin-top: 104px;

@@ -1,5 +1,5 @@
 <div class="home-slider-area">
-    <div class="home-slider owl-theme owl-carousel">
+    <div class="home-slider owl-theme owl-carousel" *ngIf="globalService.sliderData">
         <div class="slider-item slider-bg-one" *ngFor="let e of globalService.sliderData">
             <div class="d-table">
                 <div class="d-table-cell">

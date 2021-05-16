@@ -47,7 +47,7 @@
                         <h3>{{'Address' | translate}}</h3>
 
                         <ul>
-                            <li>{{contactData['address' + globalService.leng]}}</li>
+                            <li [innerHTML]="contactData['address' + globalService.leng]"></li>
                             <li></li>
                         </ul>
                     </div>
@@ -60,7 +60,7 @@
                         </div>
                         <h3>{{'Working days' | translate}}</h3>
                         <ul>
-                            <li>{{contactData['date' + globalService.leng]}}</li>
+                            <li [innerHTML]="contactData['date' + globalService.leng]"></li>
                         </ul>
                     </div>
                 </div>
@@ -86,7 +86,7 @@
                         </div>
                         <h3>{{'Languages' | translate}}</h3>
                         <ul>
-                            <li>{{contactData['lang' + globalService.leng]}}</li>
+                            <li [innerHTML]="contactData['lang' + globalService.leng]"></li>
                         </ul>
                     </div>
                 </div>

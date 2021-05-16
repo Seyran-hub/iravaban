@@ -14,7 +14,7 @@ export class ServicesComponent implements OnInit {
   constructor(private service: ServiceService,public globalService: GlobalService,public translate: TranslateService) { }
 
   ngOnInit(): void {
-    this.service.getServiceId({serviceId: 7}).subscribe(e => {
+    this.service.getServiceId({serviceId: 21}).subscribe(e => {
       if(e['result'])
         this.serviceById = e['result'][0]
     })
@@ -22,7 +22,7 @@ export class ServicesComponent implements OnInit {
       e['result'] = e['result'].reverse()
       if(e['result'])
         for(let i = 0; i < e['result'].length; i++){
-          if(e['result'][i].id !== 7){
+          if(e['result'][i].id !==  21){
             this.serviceData.push(e['result'][i])
             if(this.serviceData.length == 4) break
           }

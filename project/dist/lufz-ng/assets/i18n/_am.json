@@ -6,7 +6,7 @@
     "About Us": "Մեր մասին",
     "Services": "Ծառայություններ",
     "Lawyers": "Իրավաբաններ",
-    "CV": "Ինքնակենսագրական",
+    "CV": "Ինքնակենսագրություն",
     "Our cases": "Գործեր",
     "Contacts": "Կապ",
     "AM": "AM",
@@ -38,7 +38,8 @@
     "Experience": "Փորձ",
     "Computer Skills": "Համակարգչային հմտություններ",
     "Other information": "Այլ տեղեկություն",
-    "Go to services": "Դեպի ծառայությունները",
+    "Go to services": "Ծառայություններ",
     "Send": "Ուղարկել",
-    "Write to us": "Գրե՛ք մեզ"
+    "Write to us": "Գրե՛ք մեզ",
+    "General Page": "Գլխավոր Էջ"
 }

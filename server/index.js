@@ -14,7 +14,10 @@ app.use(express.static(path.join(__dirname, './images')));
 app.use('/images', express.static( __dirname + '/./images'));
 app.use('/api', restApi);
 
-app.use(express.static(path.join(__dirname, '../project/dist/lufz-ng')));
-app.get('*', (req, res) => res.sendFile(path.join(__dirname, '../project/dist/lufz-ng/index.html')));
+// app.use(express.static(path.join(__dirname, '../project/dist/lufz-ng')));
+// app.get('*', (req, res) => res.sendFile(path.join(__dirname, '../project/dist/lufz-ng/index.html')));
 
 app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
+
+
+

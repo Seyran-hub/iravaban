@@ -24,7 +24,7 @@
                     <div class="footer-service">
                         <h3>{{'Quick Links' | translate}}</h3>
                         <ul>
-                            <li><a routerLink="/"><i class="icofont-simple-right"></i> {{'Home' | translate}}</a></li>
+                            <li><a routerLink="/"><i class="icofont-simple-right"></i> {{'General Page' | translate}}</a></li>
                             <li><a routerLink="about"><i class="icofont-simple-right"></i> {{'About Us' | translate}}</a></li>
                             <li><a routerLink="attorney"><i class="icofont-simple-right"></i> {{'Lawyers' | translate}}</a></li>
                             <li><a routerLink="services"><i class="icofont-simple-right"></i> {{'Services' | translate}}</a></li>
@@ -42,7 +42,7 @@
                         <h3>{{'Contacts' | translate}}</h3>
 
                         <ul *ngIf="contactData">
-                            <li><i class="icofont-location-pin"></i>{{contactData['address' + globalService.leng]}}</li>
+                            <li><i class="icofont-location-pin"></i><span [innerHTML]="contactData['address' + globalService.leng]"></span></li>
                             <li><i class="icofont-ui-call"></i><a [href]="phone">{{contactData.phone}}</a></li>
                             <li><i class="icofont-at"></i> <a [href]="email">{{contactData.email}}</a></li>
                         </ul>
