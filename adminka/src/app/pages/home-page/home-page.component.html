@@ -18,7 +18,7 @@
                 <label for="service">Choose a Service:</label>
                 <select name="service" id="service"  formControlName="service_id">
                     <option [value]="-1">Service none chuse</option>
-                    <option [value]="e.id" *ngFor="let e of serviceData">{{e.id}}</option>
+                    <option [value]="e.id" *ngFor="let e of serviceData">{{e.title_en}}</option>
                 </select>
             </div>
             <button class="send_butt"  [disabled]="!updateForm.valid" (click)="updateData()">SEND</button>

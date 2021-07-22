@@ -18,6 +18,7 @@ export class HomeThreeComponent implements OnInit {
   }
 
   getService(data){
+    console.log(data)
     localStorage.setItem('service', JSON.stringify(data))
   }
 

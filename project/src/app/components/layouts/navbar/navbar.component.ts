@@ -17,7 +17,6 @@ export class NavbarComponent implements OnInit {
     translate.addLangs(['_en', '_am', '_ru', '_fr']);
     if (localStorage.getItem('language')) {
       let e = localStorage.getItem('language')
-      console.log(e)
       this.translate.use(e)
       this.globalService.leng = e
       this.lang = e

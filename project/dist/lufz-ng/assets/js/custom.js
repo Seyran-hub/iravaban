@@ -18,7 +18,7 @@
 	// Home Slider JS
 	$('.home-slider').owlCarousel({
 		items: 1,
-		loop:true,
+		loop:false,
 		margin: 0,
 		nav: true,
 		dots: true,
